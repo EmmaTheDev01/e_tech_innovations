@@ -76,8 +76,8 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
             href="/"
             style={{
               color: pathname === '/' ? '#0066ff' : 'var(--text-secondary)',
-              fontSize: '0.95rem',
-              fontWeight: pathname === '/' ? 700 : 500,
+              fontSize: '0.9rem',
+              fontWeight: pathname === '/' ? 500 : 350,
               textDecoration: 'none',
               transition: 'color 0.2s',
             }}
@@ -89,8 +89,8 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
             href="/about"
             style={{
               color: pathname === '/about' ? '#0066ff' : 'var(--text-secondary)',
-              fontSize: '0.95rem',
-              fontWeight: pathname === '/about' ? 700 : 500,
+              fontSize: '0.9rem',
+              fontWeight: pathname === '/about' ? 500 : 350,
               textDecoration: 'none',
               transition: 'color 0.2s',
             }}
@@ -112,8 +112,8 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
                 background: 'transparent',
                 border: 'none',
                 color: pathname.startsWith('/services') ? '#0066ff' : 'var(--text-secondary)',
-                fontSize: '0.95rem',
-                fontWeight: pathname.startsWith('/services') ? 700 : 500,
+                fontSize: '0.9rem',
+                fontWeight: pathname.startsWith('/services') ? 500 : 350,
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
@@ -125,7 +125,7 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
               onMouseEnter={(e) => (e.currentTarget.style.color = '#0066ff')}
               onMouseLeave={(e) => (e.currentTarget.style.color = pathname.startsWith('/services') ? '#0066ff' : 'var(--text-secondary)')}
             >
-              Services <ChevronDown size={15} style={{ opacity: 0.7 }} />
+              Services <ChevronDown size={14} style={{ opacity: 0.7 }} />
             </Link>
             {openDropdown === 'services' && (
               <div
@@ -183,8 +183,8 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
             href="/featured-work"
             style={{
               color: pathname === '/featured-work' ? '#0066ff' : 'var(--text-secondary)',
-              fontSize: '0.95rem',
-              fontWeight: pathname === '/featured-work' ? 700 : 500,
+              fontSize: '0.9rem',
+              fontWeight: pathname === '/featured-work' ? 500 : 350,
               textDecoration: 'none',
               transition: 'color 0.2s',
             }}
@@ -198,8 +198,8 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
             href="/contact"
             style={{
               color: pathname === '/contact' ? '#0066ff' : 'var(--text-secondary)',
-              fontSize: '0.95rem',
-              fontWeight: pathname === '/contact' ? 700 : 500,
+              fontSize: '0.9rem',
+              fontWeight: pathname === '/contact' ? 500 : 350,
               textDecoration: 'none',
               transition: 'color 0.2s',
             }}

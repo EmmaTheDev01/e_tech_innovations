@@ -197,7 +197,7 @@ export default function ServicesChatDemo() {
                 textDecoration: 'none',
                 cursor: 'pointer',
                 background: 'var(--accent-lime)',
-                color: '#07090e',
+                color: '#121212',
               }}
             >
               <ArrowUpRight size={48} strokeWidth={2.8} />

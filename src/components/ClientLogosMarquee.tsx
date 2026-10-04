@@ -25,12 +25,12 @@ export default function ClientLogosMarquee() {
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px', textAlign: 'center', marginBottom: '28px' }}>
         <p
           style={{
-            fontSize: '0.92rem',
+            fontSize: '0.82rem',
             color: 'var(--text-secondary)',
-            fontWeight: 600,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
+            fontWeight: 400,
+            letterSpacing: '0.06em',
             margin: 0,
+            textTransform: 'uppercase',
           }}
         >
           Trusted by leading enterprises, government agencies &amp; financial institutions

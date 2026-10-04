@@ -10,10 +10,11 @@ export default function Hero3DCanvas() {
 
   // Dynamic references for theme updates
   const sphereMatRef = useRef<THREE.MeshStandardMaterial | null>(null);
-  const wireframeMatRef = useRef<THREE.MeshBasicMaterial | null>(null);
+  const wireframeMatRef = useRef<THREE.LineBasicMaterial | null>(null);
   const pointsMatRef = useRef<THREE.PointsMaterial | null>(null);
   const ring1MatRef = useRef<THREE.MeshBasicMaterial | null>(null);
   const ring2MatRef = useRef<THREE.MeshBasicMaterial | null>(null);
+  const satelliteMatRef = useRef<THREE.MeshBasicMaterial | null>(null);
   const ambientLightRef = useRef<THREE.AmbientLight | null>(null);
   const dirLightRef = useRef<THREE.DirectionalLight | null>(null);
 
@@ -23,11 +24,11 @@ export default function Hero3DCanvas() {
 
     if (sphereMatRef.current) {
       if (isLight) {
-        sphereMatRef.current.color.setHex(0xe8f0e8);
-        sphereMatRef.current.emissive.setHex(0xd0e8d0);
-        sphereMatRef.current.metalness = 0.55;
-        sphereMatRef.current.roughness = 0.25;
-        sphereMatRef.current.opacity = 0.92;
+        sphereMatRef.current.color.setHex(0xffffff);
+        sphereMatRef.current.emissive.setHex(0x000000);
+        sphereMatRef.current.metalness = 0.2;
+        sphereMatRef.current.roughness = 0.35;
+        sphereMatRef.current.opacity = 0.95;
       } else {
         sphereMatRef.current.color.setHex(0x06110a);
         sphereMatRef.current.emissive.setHex(0x020904);
@@ -39,36 +40,41 @@ export default function Hero3DCanvas() {
     }
 
     if (wireframeMatRef.current) {
-      wireframeMatRef.current.color.setHex(isLight ? 0x41b94b : 0xb4f736);
+      wireframeMatRef.current.color.setHex(isLight ? 0x000000 : 0xb4f736);
       wireframeMatRef.current.opacity = isLight ? 0.45 : 0.35;
       wireframeMatRef.current.needsUpdate = true;
     }
 
     if (pointsMatRef.current) {
-      pointsMatRef.current.color.setHex(isLight ? 0x41b94b : 0xb4f736);
+      pointsMatRef.current.color.setHex(isLight ? 0x000000 : 0xb4f736);
       pointsMatRef.current.needsUpdate = true;
     }
 
     if (ring1MatRef.current) {
-      ring1MatRef.current.color.setHex(isLight ? 0x41b94b : 0xb4f736);
-      ring1MatRef.current.opacity = isLight ? 0.6 : 0.55;
+      ring1MatRef.current.color.setHex(isLight ? 0x000000 : 0xb4f736);
+      ring1MatRef.current.opacity = isLight ? 0.8 : 0.55;
       ring1MatRef.current.needsUpdate = true;
     }
 
     if (ring2MatRef.current) {
-      ring2MatRef.current.color.setHex(isLight ? 0x65a30d : 0x84cc16);
-      ring2MatRef.current.opacity = isLight ? 0.5 : 0.4;
+      ring2MatRef.current.color.setHex(isLight ? 0x18181b : 0x84cc16);
+      ring2MatRef.current.opacity = isLight ? 0.6 : 0.4;
       ring2MatRef.current.needsUpdate = true;
+    }
+
+    if (satelliteMatRef.current) {
+      satelliteMatRef.current.color.setHex(isLight ? 0x000000 : 0xb4f736);
+      satelliteMatRef.current.needsUpdate = true;
     }
 
     if (ambientLightRef.current) {
       ambientLightRef.current.color.setHex(isLight ? 0xffffff : 0x051a0b);
-      ambientLightRef.current.intensity = isLight ? 2.2 : 1.6;
+      ambientLightRef.current.intensity = isLight ? 2.0 : 1.6;
     }
 
     if (dirLightRef.current) {
-      dirLightRef.current.color.setHex(isLight ? 0x41b94b : 0xb4f736);
-      dirLightRef.current.intensity = isLight ? 2.8 : 2.5;
+      dirLightRef.current.color.setHex(isLight ? 0xffffff : 0xb4f736);
+      dirLightRef.current.intensity = isLight ? 2.5 : 2.5;
     }
   }, [theme]);
 
@@ -127,25 +133,25 @@ export default function Hero3DCanvas() {
     // 1. Core Sphere (Semi-translucent metallic tech body)
     const sphereGeom = new THREE.SphereGeometry(1.85, 36, 36);
     const sphereMat = new THREE.MeshStandardMaterial({
-      color: isLightInitial ? 0xe8f0e8 : 0x06110a,
-      emissive: isLightInitial ? 0xd0e8d0 : 0x020904,
-      metalness: isLightInitial ? 0.55 : 0.85,
-      roughness: isLightInitial ? 0.25 : 0.2,
+      color: isLightInitial ? 0xffffff : 0x06110a,
+      emissive: isLightInitial ? 0x000000 : 0x020904,
+      metalness: isLightInitial ? 0.2 : 0.85,
+      roughness: isLightInitial ? 0.35 : 0.2,
       transparent: true,
-      opacity: isLightInitial ? 0.92 : 0.88,
+      opacity: isLightInitial ? 0.95 : 0.88,
     });
     sphereMatRef.current = sphereMat;
     const sphereMesh = new THREE.Mesh(sphereGeom, sphereMat);
     globeGroup.add(sphereMesh);
 
-    // 2. Latitude / Longitude Cyber Wireframe Cage (App Green)
+    // 2. Latitude / Longitude Cyber Wireframe Cage (Monochrome in Light Mode, App Green in Dark)
     const wireGeom = new THREE.WireframeGeometry(new THREE.SphereGeometry(1.86, 20, 20));
     const wireMat = new THREE.LineBasicMaterial({
-      color: isLightInitial ? 0x41b94b : 0xb4f736,
+      color: isLightInitial ? 0x000000 : 0xb4f736,
       transparent: true,
       opacity: isLightInitial ? 0.45 : 0.35,
     });
-    wireframeMatRef.current = wireMat as unknown as THREE.MeshBasicMaterial;
+    wireframeMatRef.current = wireMat;
     const wireMesh = new THREE.LineSegments(wireGeom, wireMat);
     globeGroup.add(wireMesh);
 
@@ -170,7 +176,7 @@ export default function Hero3DCanvas() {
 
     const pointsMat = new THREE.PointsMaterial({
       size: 0.06,
-      color: isLightInitial ? 0x41b94b : 0xb4f736,
+      color: isLightInitial ? 0x000000 : 0xb4f736,
       transparent: true,
       opacity: 0.95,
     });
@@ -179,12 +185,12 @@ export default function Hero3DCanvas() {
     const pointsMesh = new THREE.Points(pointsGeom, pointsMat);
     globeGroup.add(pointsMesh);
 
-    // 4. Orbital Ring 1 (Tilted Equator Ring)
+    // 4. Orbital Ring 1 (Tilted Equator Ring - Crisp Black in Light Mode)
     const ring1Geom = new THREE.TorusGeometry(2.35, 0.016, 6, 64);
     const ring1Mat = new THREE.MeshBasicMaterial({
-      color: isLightInitial ? 0x41b94b : 0xb4f736,
+      color: isLightInitial ? 0x000000 : 0xb4f736,
       transparent: true,
-      opacity: isLightInitial ? 0.6 : 0.55,
+      opacity: isLightInitial ? 0.8 : 0.55,
     });
     ring1MatRef.current = ring1Mat;
     const ring1 = new THREE.Mesh(ring1Geom, ring1Mat);
@@ -192,12 +198,12 @@ export default function Hero3DCanvas() {
     ring1.rotation.y = Math.PI / 8;
     globeGroup.add(ring1);
 
-    // 5. Orbital Ring 2 (Polar Orbit Ring - Vibrant Lime Accent)
+    // 5. Orbital Ring 2 (Polar Orbit Ring - Deep Charcoal Black in Light Mode)
     const ring2Geom = new THREE.TorusGeometry(2.45, 0.013, 6, 64);
     const ring2Mat = new THREE.MeshBasicMaterial({
-      color: isLightInitial ? 0x65a30d : 0x84cc16,
+      color: isLightInitial ? 0x18181b : 0x84cc16,
       transparent: true,
-      opacity: isLightInitial ? 0.5 : 0.4,
+      opacity: isLightInitial ? 0.6 : 0.4,
     });
     ring2MatRef.current = ring2Mat;
     const ring2 = new THREE.Mesh(ring2Geom, ring2Mat);
@@ -208,22 +214,23 @@ export default function Hero3DCanvas() {
     // Small orbiting data beacon satellite on Ring 1
     const satelliteGeom = new THREE.SphereGeometry(0.07, 8, 8);
     const satelliteMat = new THREE.MeshBasicMaterial({
-      color: isLightInitial ? 0x41b94b : 0xb4f736,
+      color: isLightInitial ? 0x000000 : 0xb4f736,
     });
+    satelliteMatRef.current = satelliteMat;
     const satellite = new THREE.Mesh(satelliteGeom, satelliteMat);
     globeGroup.add(satellite);
 
     // 6. Optimized Lighting
     const ambientLight = new THREE.AmbientLight(
       isLightInitial ? 0xffffff : 0x051a0b,
-      isLightInitial ? 2.2 : 1.6
+      isLightInitial ? 2.0 : 1.6
     );
     ambientLightRef.current = ambientLight;
     scene.add(ambientLight);
 
     const dirLight = new THREE.DirectionalLight(
-      isLightInitial ? 0x41b94b : 0xb4f736,
-      isLightInitial ? 2.8 : 2.5
+      isLightInitial ? 0xffffff : 0xb4f736,
+      isLightInitial ? 2.5 : 2.5
     );
     dirLight.position.set(3, 4, 5);
     dirLightRef.current = dirLight;
@@ -286,7 +293,7 @@ export default function Hero3DCanvas() {
       if (delta < interval) return;
       lastTime = currentTime - (delta % interval);
 
-      elapsed += isLightInitial ? 0.007 : 0.015;
+      elapsed += 0.012;
 
       // Mouse damping
       mouseX += (targetX - mouseX) * 0.05;

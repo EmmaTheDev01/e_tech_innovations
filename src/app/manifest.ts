@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Enterprise Software Engineering & Systems Integration',
     start_url: '/',
     display: 'standalone',
-    background_color: '#07090e',
+    background_color: '#121212',
     theme_color: '#0066ff',
     icons: [
       {

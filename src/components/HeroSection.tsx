@@ -51,12 +51,12 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
           {/* Headline */}
           <h1
             style={{
-              fontSize: 'clamp(2.6rem, 3.2vw, 4.2rem)',
-              fontWeight: 800,
-              lineHeight: 1.12,
-              letterSpacing: '-0.03em',
+              fontSize: 'clamp(2.1rem, 3.2vw, 3.5rem)',
+              fontWeight: 300,
+              lineHeight: 1.15,
+              letterSpacing: '-0.035em',
               color: 'var(--text-primary)',
-              marginBottom: '24px',
+              marginBottom: '20px',
             }}
           >
             Custom Software. Real <br />
@@ -66,11 +66,12 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
           {/* Subtitle */}
           <p
             style={{
-              fontSize: '1.15rem',
+              fontSize: '0.98rem',
+              fontWeight: 300,
               color: 'var(--text-secondary)',
               lineHeight: 1.65,
               maxWidth: '560px',
-              marginBottom: '36px',
+              marginBottom: '32px',
             }}
           >
             e-Tech Innovations architects and delivers mission-critical software systems and high-performance native applications across all platforms and operating systems (Web, iOS, Android, Windows, macOS, Linux) — from robust ERP &amp; HR systems to next-generation LMS platforms and Hospital Information Systems (HISM).
@@ -145,19 +146,21 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
             <div>
               <div
                 style={{
-                  fontSize: 'clamp(2rem, 3.2vw, 2.8rem)',
-                  fontWeight: 800,
+                  fontSize: 'clamp(1.7rem, 2.6vw, 2.3rem)',
+                  fontWeight: 400,
                   color: 'var(--accent-lime)',
                   lineHeight: 1.1,
-                  marginBottom: '8px',
+                  marginBottom: '6px',
                   fontFamily: 'var(--font-mono)',
+                  letterSpacing: '-0.02em',
                 }}
               >
                 14M+
               </div>
               <div
                 style={{
-                  fontSize: '0.85rem',
+                  fontSize: '0.8rem',
+                  fontWeight: 300,
                   color: 'var(--text-secondary)',
                   lineHeight: 1.4,
                 }}
@@ -169,19 +172,21 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
             <div>
               <div
                 style={{
-                  fontSize: 'clamp(2rem, 3.2vw, 2.8rem)',
-                  fontWeight: 800,
+                  fontSize: 'clamp(1.7rem, 2.6vw, 2.3rem)',
+                  fontWeight: 400,
                   color: 'var(--accent-lime)',
                   lineHeight: 1.1,
-                  marginBottom: '8px',
+                  marginBottom: '6px',
                   fontFamily: 'var(--font-mono)',
+                  letterSpacing: '-0.02em',
                 }}
               >
                 99.99%
               </div>
               <div
                 style={{
-                  fontSize: '0.85rem',
+                  fontSize: '0.8rem',
+                  fontWeight: 300,
                   color: 'var(--text-secondary)',
                   lineHeight: 1.4,
                 }}
@@ -193,19 +198,21 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
             <div>
               <div
                 style={{
-                  fontSize: 'clamp(2rem, 3.2vw, 2.8rem)',
-                  fontWeight: 800,
+                  fontSize: 'clamp(1.7rem, 2.6vw, 2.3rem)',
+                  fontWeight: 400,
                   color: 'var(--accent-lime)',
                   lineHeight: 1.1,
-                  marginBottom: '8px',
+                  marginBottom: '6px',
                   fontFamily: 'var(--font-mono)',
+                  letterSpacing: '-0.02em',
                 }}
               >
                 100%
               </div>
               <div
                 style={{
-                  fontSize: '0.85rem',
+                  fontSize: '0.8rem',
+                  fontWeight: 300,
                   color: 'var(--text-secondary)',
                   lineHeight: 1.4,
                 }}
