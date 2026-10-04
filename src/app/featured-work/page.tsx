@@ -63,8 +63,8 @@ export default function FeaturedWorkPage() {
     },
     {
       id: 'coopedu-recruitment',
-      category: 'ai-recruitment',
-      categoryName: 'AI & Recruitment',
+      category: 'ai-systems',
+      categoryName: 'AI Systems',
       title: 'AI Powered e-Recruitment System for Coopedu PLC',
       client: 'Coopedu PLC',
       image: '/images/work-hr.jpg',
@@ -79,6 +79,26 @@ export default function FeaturedWorkPage() {
       solution:
         'Developed an intelligent AI-powered e-recruitment platform for Coopedu PLC featuring automated resume parsing, semantic candidate scoring, structured interview pipelines, and applicant notification automation.',
       techStack: ['Next.js', 'Python / AI Models', 'PostgreSQL', 'FastAPI', 'Redis'],
+      link: '/services/custom-software',
+    },
+    {
+      id: 'enterprise-ai-platform',
+      category: 'ai-systems',
+      categoryName: 'AI Systems',
+      title: 'Enterprise Document Intelligence & Semantic AI Platform',
+      client: 'Financial & Legal Enterprise Clients',
+      image: '/images/work-custom.jpg',
+      icon: Cpu,
+      metrics: [
+        { label: 'Document Parsing', value: 'Sub-Second' },
+        { label: 'Extraction Accuracy', value: '99.4%' },
+        { label: 'Processing Overhead', value: '-85%' },
+      ],
+      challenge:
+        'Auditing and cross-referencing unstructured legal deeds, financial filings, and contracts across tens of thousands of PDF records manually caused severe delays and operational bottlenecks.',
+      solution:
+        'Engineered an air-gapped, on-premises Enterprise AI system utilizing proprietary fine-tuned LLMs, retrieval-augmented generation (RAG), vector embeddings, and automated anomaly classification.',
+      techStack: ['Python', 'FastAPI', 'pgvector / PostgreSQL', 'LangChain', 'Next.js'],
       link: '/services/custom-software',
     },
     {
@@ -131,8 +151,8 @@ export default function FeaturedWorkPage() {
   const filters = [
     { id: 'all', name: 'All Deployments' },
     { id: 'erp', name: 'ERP Systems' },
+    { id: 'ai-systems', name: 'AI Systems' },
     { id: 'invoice', name: 'Billing & Invoicing' },
-    { id: 'ai-recruitment', name: 'AI & Recruitment' },
     { id: 'stock', name: 'Stock Management' },
     { id: 'hrms', name: 'HR & Payroll' },
   ];

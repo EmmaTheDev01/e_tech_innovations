@@ -229,6 +229,7 @@ export default function Footer() {
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {[
                   { label: 'Enterprise ERP Suite', href: '/services/erp' },
+                  { label: 'Enterprise AI Systems', href: '/services#ai-systems' },
                   { label: 'HR Systems (HRMS)', href: '/services/hrms' },
                   { label: 'Learning Management (LMS)', href: '/services/lms' },
                   { label: 'Hospital Systems (HISM)', href: '/services/hism' },

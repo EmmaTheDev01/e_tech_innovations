@@ -7,7 +7,7 @@ import {
   Users,
   GraduationCap,
   Activity,
-  Server,
+  Cpu,
   Smartphone,
   ArrowRight,
 } from 'lucide-react';
@@ -44,9 +44,9 @@ export default function ServicesGrid({ onOpenContact }: ServicesGridProps) {
     },
     {
       num: '05',
-      title: 'Cloud Architecture & DevOps',
-      icon: <Server size={26} />,
-      desc: 'Containerized Kubernetes microservices, multi-region CI/CD pipelines, automated failover, and zero-downtime database migrations.',
+      title: 'Enterprise AI Systems',
+      icon: <Cpu size={26} />,
+      desc: 'Fine-tuned LLMs, private RAG knowledge bases, intelligent document extraction, automated agent workflows, and predictive analytics.',
     },
     {
       num: '06',

@@ -17,6 +17,7 @@ import {
   CheckCircle2,
   ChevronRight,
   BarChart3,
+  Cpu,
 } from 'lucide-react';
 
 export default function ServicesPage() {
@@ -93,6 +94,23 @@ export default function ServicesPage() {
         'Multi-tier insurance claims adjudication & billing ledger',
       ],
       metrics: '55% faster patient triage to consultation handoff',
+    },
+    {
+      id: 'ai-systems',
+      title: 'Enterprise AI Systems',
+      tagline: 'Cognitive Automation & Machine Intelligence',
+      description:
+        'Custom large language models (LLMs), retrieval-augmented generation (RAG), automated document intelligence, predictive decision engines, and enterprise AI agents deployed securely on sovereign infrastructure.',
+      image: '/images/work-custom.jpg',
+      icon: Cpu,
+      href: '/services/custom-software',
+      highlights: [
+        'Proprietary RAG knowledge bases with strict enterprise data isolation',
+        'Automated document extraction, OCR & semantic scoring pipelines',
+        'Predictive operational forecasting and automated decision workflows',
+        '100% on-premises or air-gapped private model deployment',
+      ],
+      metrics: '10x acceleration in automated workflow decisioning',
     },
     {
       id: 'custom-software',

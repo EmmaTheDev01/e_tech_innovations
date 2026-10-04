@@ -52,12 +52,12 @@ export default function FeaturedWorkSection({ onOpenContact }: FeaturedWorkSecti
     {
       id: 'coopedu-recruitment',
       name: 'AI Powered e-Recruitment for Coopedu PLC',
-      systemType: 'AI Talent Acquisition & Applicant Tracking',
+      systemType: 'Enterprise AI & Intelligent Recruitment',
       tagline: 'Intelligent Candidate Screening, Resume Scoring & Automated Hiring Pipelines',
       image: '/images/work-hr.jpg',
       icon: <Cpu size={22} />,
       accentColor: '#41b94b',
-      badge: 'AI & FinTech HR',
+      badge: 'AI Systems',
       metrics: [
         { label: 'Screening Speed', value: '10x Faster' },
         { label: 'Candidate Scoring', value: 'AI-Powered' },

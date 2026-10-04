@@ -268,6 +268,7 @@ export default function ContactPage() {
                           }}
                         >
                           <option value="Enterprise ERP Systems">Enterprise ERP Systems</option>
+                          <option value="Enterprise AI Systems & Automation">Enterprise AI Systems &amp; Automation</option>
                           <option value="HR & Payroll Platforms (HRMS)">HR & Payroll Platforms (HRMS)</option>
                           <option value="Learning Management (LMS)">Learning Management (LMS)</option>
                           <option value="Hospital Information Systems (HISM)">Hospital Information Systems (HISM)</option>

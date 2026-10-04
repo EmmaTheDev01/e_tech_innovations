@@ -148,6 +148,7 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
                   { name: 'HR & Payroll Systems (HRMS)', href: '/services/hrms' },
                   { name: 'Learning Management (LMS)', href: '/services/lms' },
                   { name: 'Hospital Systems (HISM)', href: '/services/hism' },
+                  { name: 'Enterprise AI Systems', href: '/services#ai-systems' },
                   { name: 'Bespoke Enterprise Software', href: '/services/custom-software' },
                 ].map((service) => (
                   <Link

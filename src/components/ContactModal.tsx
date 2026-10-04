@@ -206,6 +206,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   }}
                 >
                   <option value="Enterprise ERP Systems">Enterprise ERP Systems (Supply Chain, General Ledger)</option>
+                  <option value="Enterprise AI Systems">Enterprise AI Systems (LLMs, Automation, Document Intelligence)</option>
                   <option value="HR & Payroll Systems">HR Systems (HRMS &amp; Automated Payroll)</option>
                   <option value="Learning Management Systems">Learning Management (LMS / SCORM)</option>
                   <option value="Hospital Information Systems">Hospital Systems (HISM / HMIS / EHR)</option>

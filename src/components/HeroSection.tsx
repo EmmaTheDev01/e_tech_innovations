@@ -261,13 +261,12 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
               zIndex: 3,
               borderRadius: '20px',
               background: 'var(--bg-card)',
-              border: '1px solid var(--accent-lime)',
-              boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 102, 255, 0.15)',
               animation: 'floatElement 6s ease-in-out infinite',
             }}
           >
             {/* Enterprise Architecture Image */}
             <div
+              className="floating-card-image"
               style={{
                 position: 'relative',
                 width: '100%',
@@ -275,7 +274,6 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
                 borderRadius: '14px',
                 overflow: 'hidden',
                 marginBottom: '14px',
-                border: '1px solid var(--border-glass)',
               }}
             >
               <Image
@@ -341,6 +339,46 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
       </div>
 
       <style jsx>{`
+        .floating-ai-card {
+          border: 1.5px solid #b4f736 !important;
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 32px rgba(180, 247, 54, 0.35) !important;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+        }
+
+        .floating-ai-card:hover {
+          border-color: #c4ff47 !important;
+          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 42px rgba(180, 247, 54, 0.5) !important;
+        }
+
+        .floating-card-image {
+          border: 1px solid rgba(180, 247, 54, 0.3) !important;
+          transition: border-color 0.3s ease !important;
+        }
+
+        :global([data-theme="light"]) .floating-ai-card {
+          border: 1.5px solid #000000 !important;
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 20px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        :global([data-theme="light"]) .floating-ai-card:hover {
+          border-color: #18181b !important;
+          box-shadow: 0 25px 55px rgba(0, 0, 0, 0.18), 0 0 25px rgba(0, 0, 0, 0.14) !important;
+        }
+
+        :global([data-theme="light"]) .floating-card-image {
+          border: 1px solid rgba(0, 0, 0, 0.18) !important;
+        }
+
+        @media (prefers-color-scheme: light) {
+          :global(:root:not([data-theme="dark"])) .floating-ai-card {
+            border: 1.5px solid #000000 !important;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 20px rgba(0, 0, 0, 0.08) !important;
+          }
+          :global(:root:not([data-theme="dark"])) .floating-card-image {
+            border: 1px solid rgba(0, 0, 0, 0.18) !important;
+          }
+        }
+
         @media (min-width: 980px) {
           .hero-grid {
             grid-template-columns: 1.15fr 0.85fr !important;
