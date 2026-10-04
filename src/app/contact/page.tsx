@@ -111,7 +111,7 @@ export default function ContactPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
             <div
               className="scroll-reveal-stagger"
-              style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '48px', alignItems: 'start' }}
+              style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 460px), 1fr))', gap: '48px', alignItems: 'stretch' }}
             >
               {/* Form Container */}
               <div
@@ -121,10 +121,13 @@ export default function ContactPage() {
                   borderRadius: '24px',
                   padding: 'clamp(28px, 4vw, 44px)',
                   boxShadow: '0 16px 40px rgba(0, 0, 0, 0.2)',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
                 }}
               >
                 {submitted ? (
-                  <div style={{ textAlign: 'center', padding: '48px 16px' }}>
+                  <div style={{ textAlign: 'center', padding: '48px 16px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', flex: 1 }}>
                     <div
                       style={{
                         width: '64px',
@@ -164,7 +167,7 @@ export default function ContactPage() {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                  <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px', height: '100%', flex: 1 }}>
                     <div style={{ marginBottom: '8px' }}>
                       <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '6px' }}>
                         Enterprise Project Discovery
@@ -298,7 +301,7 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div>
+                    <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                       <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '6px' }}>
                         System Scope & Operational Requirements *
                       </label>
@@ -310,6 +313,8 @@ export default function ContactPage() {
                         placeholder="Enter your project details or requirements..."
                         style={{
                           width: '100%',
+                          flex: 1,
+                          minHeight: '120px',
                           padding: '12px 16px',
                           background: 'rgba(255, 255, 255, 0.04)',
                           border: '1px solid var(--border-glass)',
@@ -333,7 +338,7 @@ export default function ContactPage() {
                         justifyContent: 'center',
                         gap: '10px',
                         cursor: 'pointer',
-                        marginTop: '8px',
+                        marginTop: 'auto',
                       }}
                     >
                       <Send size={18} />
@@ -344,7 +349,7 @@ export default function ContactPage() {
               </div>
 
               {/* SLA & Office Information */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', height: '100%' }}>
                 {/* Contact Information & Engineering Hub */}
                 <div
                   style={{
@@ -400,6 +405,9 @@ export default function ContactPage() {
                     border: '1px solid var(--border-glass)',
                     borderRadius: '24px',
                     padding: '32px',
+                    flex: 1,
+                    display: 'flex',
+                    flexDirection: 'column',
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
@@ -412,7 +420,7 @@ export default function ContactPage() {
                     Every system deployed by e-Tech Innovations is backed by contractually guaranteed response times and dedicated principal engineers.
                   </p>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: 1, justifyContent: 'space-between' }}>
                     {slaTiers.map((sla, i) => (
                       <div
                         key={i}

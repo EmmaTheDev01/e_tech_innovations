@@ -80,7 +80,7 @@ export default function Footer() {
                   marginBottom: '28px',
                 }}
               >
-                e-Tech Innovations engineers mission-critical enterprise software and high-performance native applications across all platforms and operating systems (iOS, Android, Windows, macOS, Linux, and Web)
+                Engineering mission-critical enterprise software and high-performance cross-platform applications.
               </p>
               {/* Direct Contact Links */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '22px', fontSize: '0.88rem' }}>
