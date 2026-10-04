@@ -178,8 +178,11 @@
   padding: 0;
 }
 
-html {
+html[data-scroll-behavior="smooth"] {
   scroll-behavior: smooth;
+}
+
+html {
   background-color: var(--bg-dark);
   overflow-x: hidden;
   max-width: 100vw;

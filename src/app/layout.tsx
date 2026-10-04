@@ -90,7 +90,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en" className={poppins.variable} data-scroll-behavior="smooth">
       <head>
         <link rel="icon" href="/assets/favicon.png" type="image/png" sizes="any" />
         <link rel="apple-touch-icon" href="/assets/favicon.png" />
