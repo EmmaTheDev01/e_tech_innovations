@@ -11,7 +11,7 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: 'dark',
+  theme: 'light',
   toggleTheme: () => {},
   setTheme: () => {},
 });
@@ -19,10 +19,10 @@ const ThemeContext = createContext<ThemeContextType>({
 const themeListeners = new Set<() => void>();
 
 function getThemeSnapshot(): Theme {
-  if (typeof window === 'undefined') return 'dark';
+  if (typeof window === 'undefined') return 'light';
   const saved = (localStorage.getItem('etech-theme') || localStorage.getItem('zentiv-theme')) as Theme | null;
   if (saved === 'light' || saved === 'dark') return saved;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  return 'light';
 }
 
 function subscribeToTheme(callback: () => void) {
@@ -53,7 +53,7 @@ function subscribeToTheme(callback: () => void) {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const theme = useSyncExternalStore<Theme>(subscribeToTheme, getThemeSnapshot, () => 'dark');
+  const theme = useSyncExternalStore<Theme>(subscribeToTheme, getThemeSnapshot, () => 'light');
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);

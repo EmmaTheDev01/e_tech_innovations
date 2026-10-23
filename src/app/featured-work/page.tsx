@@ -246,7 +246,7 @@ export default function FeaturedWorkPage() {
                       overflow: 'hidden',
                       display: 'grid',
                       gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
-                      boxShadow: '0 12px 35px rgba(0, 0, 0, 0.15)',
+                      boxShadow: '0 6px 24px rgba(15, 23, 42, 0.06)',
                     }}
                   >
                     {/* Media Showcase */}

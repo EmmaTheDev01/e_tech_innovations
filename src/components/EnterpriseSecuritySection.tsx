@@ -118,7 +118,7 @@ export default function EnterpriseSecuritySection({ onOpenContact }: EnterpriseS
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      boxShadow: '0 0 20px rgba(0, 102, 255, 0.35)',
+                      boxShadow: '0 4px 12px rgba(15, 23, 42, 0.08)',
                     }}
                   >
                     {item.icon}

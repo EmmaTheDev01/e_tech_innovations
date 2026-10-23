@@ -50,7 +50,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           borderRadius: '24px',
           background: 'var(--modal-bg)',
           border: '1px solid var(--border-glass-bright)',
-          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 102, 255, 0.2)',
+          boxShadow: '0 25px 60px rgba(15, 23, 42, 0.2)',
           position: 'relative',
         }}
         onClick={(e) => e.stopPropagation()}
@@ -226,6 +226,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               >
                 <span>Request Technical Consultation</span>
               </button>
+
+              <div style={{ marginTop: '14px', textAlign: 'center', fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
+                Or speak with our architects directly: <br />
+                <a href="tel:+250788301054" style={{ color: '#1254ff', textDecoration: 'none', fontWeight: 600 }}>+250 788 301 054</a>
+                {' '}&bull;{' '}
+                <a href="tel:+250788304025" style={{ color: '#1254ff', textDecoration: 'none', fontWeight: 600 }}>+250 788 304 025</a>
+              </div>
             </form>
           </div>
         )}

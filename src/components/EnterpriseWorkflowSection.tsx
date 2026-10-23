@@ -97,21 +97,59 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
       >
         {/* Header */}
         <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 60px' }}>
-          <div className="section-tag" style={{ justifyContent: 'center' }}>
-            <span className="dot" />
-            <span>Implementation Framework</span>
-          </div>
+          <span
+            className="tekni-badge"
+            style={{
+              fontSize: '0.8rem',
+              padding: '6px 16px',
+              borderRadius: '6px',
+              border: '1px solid rgba(18, 84, 255, 0.25)',
+              background: 'rgba(18, 84, 255, 0.08)',
+              color: '#1254ff',
+              fontWeight: 700,
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              marginBottom: '16px',
+            }}
+          >
+            <span>IMPLEMENTATION FRAMEWORK</span>
+          </span>
 
-          <h2 className="section-title">
-            Our Enterprise Software Engineering Roadmap
+          <h2
+            style={{
+              fontSize: 'clamp(2.1rem, 3.6vw, 3.2rem)',
+              fontWeight: 800,
+              color: '#081028',
+              lineHeight: 1.2,
+              letterSpacing: '-0.025em',
+              marginBottom: '16px',
+            }}
+          >
+            Our Enterprise Software{' '}
+            <span
+              style={{
+                background: 'linear-gradient(90deg, #1254ff 0%, #00d2ff 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              Engineering Roadmap
+            </span>
           </h2>
 
-          <p className="section-subtitle" style={{ margin: '0 auto' }}>
+          <p
+            style={{
+              fontSize: '1.05rem',
+              color: '#475569',
+              lineHeight: 1.6,
+              maxWidth: '680px',
+              margin: '0 auto',
+            }}
+          >
             From initial architectural blueprinting to production cutover and contract-backed enterprise support.
           </p>
         </div>
-
-
 
         {/* 2-Column Grid: Step Cards on Left, Interactive Deep Dive + Parallax Image on Right */}
         <div
@@ -131,14 +169,14 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
                 <div
                   key={step.num}
                   onClick={() => setActiveStep(idx)}
-                  className={`glass-panel workflow-step-card ${isActive ? 'active' : ''}`}
+                  className={`workflow-step-card ${isActive ? 'active' : ''}`}
                   style={{
                     padding: '24px 28px',
-                    borderRadius: '18px',
+                    borderRadius: '16px',
                     cursor: 'pointer',
-                    border: isActive ? '1px solid rgba(0, 102, 255, 0.45)' : '1px solid var(--border-glass)',
-                    background: isActive ? 'var(--bg-card-hover)' : 'var(--bg-card)',
-                    boxShadow: isActive ? '0 4px 16px rgba(0, 0, 0, 0.06)' : 'none',
+                    border: isActive ? '1.5px solid #1254ff' : '1px solid rgba(15, 23, 42, 0.08)',
+                    background: isActive ? '#ffffff' : '#f8fafc',
+                    boxShadow: isActive ? '0 8px 24px rgba(15, 23, 42, 0.08)' : '0 2px 8px rgba(15, 23, 42, 0.03)',
                     transition: 'all 0.25s ease',
                   }}
                 >
@@ -148,8 +186,8 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
                         style={{
                           fontSize: '1rem',
                           fontWeight: 800,
-                          fontFamily: 'var(--font-mono)',
-                          color: isActive ? 'var(--accent-blue)' : 'var(--text-muted)',
+                          fontFamily: 'monospace',
+                          color: isActive ? '#1254ff' : '#94a3b8',
                         }}
                       >
                         {step.num}
@@ -157,12 +195,12 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
                       <span
                         style={{
                           fontSize: '0.8rem',
-                          fontWeight: 600,
+                          fontWeight: 700,
                           padding: '3px 10px',
                           borderRadius: '20px',
-                          background: isActive ? 'rgba(0, 102, 255, 0.15)' : 'var(--bg-glass)',
-                          color: isActive ? 'var(--accent-blue)' : 'var(--text-secondary)',
-                          border: '1px solid var(--border-glass)',
+                          background: isActive ? 'rgba(18, 84, 255, 0.1)' : 'rgba(15, 23, 42, 0.04)',
+                          color: isActive ? '#1254ff' : '#64748b',
+                          border: isActive ? '1px solid rgba(18, 84, 255, 0.25)' : '1px solid rgba(15, 23, 42, 0.08)',
                         }}
                       >
                         {step.badge}
@@ -174,8 +212,8 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
                         width: '36px',
                         height: '36px',
                         borderRadius: '10px',
-                        background: isActive ? 'var(--accent-blue)' : 'var(--bg-glass)',
-                        color: isActive ? '#ffffff' : 'var(--text-secondary)',
+                        background: isActive ? '#1254ff' : 'rgba(15, 23, 42, 0.05)',
+                        color: isActive ? '#ffffff' : '#475569',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -188,9 +226,9 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
 
                   <h3
                     style={{
-                      fontSize: '1.2rem',
-                      fontWeight: 700,
-                      color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)',
+                      fontSize: '1.15rem',
+                      fontWeight: 800,
+                      color: isActive ? '#081028' : '#1e293b',
                       marginBottom: '8px',
                     }}
                   >
@@ -200,8 +238,9 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
                   <p
                     style={{
                       fontSize: '0.9rem',
-                      color: 'var(--text-secondary)',
+                      color: '#475569',
                       lineHeight: 1.5,
+                      margin: 0,
                     }}
                   >
                     {step.desc}
@@ -213,17 +252,18 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
 
           {/* Right Column: Active Architecture Focus Card with Parallax Background */}
           <div
-            className="glass-panel workflow-focus-card"
+            className="workflow-focus-card"
             style={{
-              borderRadius: '24px',
+              borderRadius: '20px',
               padding: '40px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
               position: 'relative',
               overflow: 'hidden',
-              border: '1px solid var(--border-glass)',
-              background: 'var(--bg-card)',
+              border: '1px solid rgba(15, 23, 42, 0.08)',
+              background: '#ffffff',
+              boxShadow: '0 12px 36px rgba(15, 23, 42, 0.06)',
             }}
           >
             {/* Parallax Background Visual */}
@@ -234,7 +274,7 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
                 right: '-10%',
                 width: '60%',
                 height: '70%',
-                opacity: 0.12,
+                opacity: 0.08,
                 transform: `translateY(${parallaxOffset}px)`,
                 pointerEvents: 'none',
                 transition: 'transform 0.1s ease-out',
@@ -245,7 +285,7 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
                 alt="Architecture Telemetry"
                 fill
                 sizes="(max-width: 980px) 100vw, 550px"
-                style={{ objectFit: 'cover', borderRadius: '24px' }}
+                style={{ objectFit: 'cover', borderRadius: '20px' }}
               />
             </div>
 
@@ -256,14 +296,14 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
-                  background: 'rgba(0, 102, 255, 0.12)',
-                  border: '1px solid rgba(0, 102, 255, 0.3)',
-                  padding: '6px 14px',
-                  borderRadius: '20px',
-                  fontSize: '0.85rem',
-                  fontWeight: 600,
-                  color: 'var(--accent-blue)',
-                  marginBottom: '20px',
+                  background: 'rgba(18, 84, 255, 0.08)',
+                  border: '1px solid rgba(18, 84, 255, 0.2)',
+                  padding: '5px 12px',
+                  borderRadius: '6px',
+                  fontSize: '0.82rem',
+                  fontWeight: 700,
+                  color: '#1254ff',
+                  marginBottom: '18px',
                 }}
               >
                 <span>Live Phase Inspection</span>
@@ -271,10 +311,10 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
 
               <h3
                 style={{
-                  fontSize: '1.7rem',
+                  fontSize: '1.65rem',
                   fontWeight: 800,
-                  color: 'var(--text-primary)',
-                  marginBottom: '14px',
+                  color: '#081028',
+                  marginBottom: '12px',
                   lineHeight: 1.25,
                 }}
               >
@@ -283,10 +323,10 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
 
               <p
                 style={{
-                  fontSize: '1rem',
-                  color: 'var(--text-secondary)',
+                  fontSize: '0.96rem',
+                  color: '#475569',
                   lineHeight: 1.6,
-                  marginBottom: '28px',
+                  marginBottom: '26px',
                 }}
               >
                 {steps[activeStep].desc}
@@ -296,10 +336,10 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
               <div style={{ marginBottom: '32px' }}>
                 <h4
                   style={{
-                    fontSize: '0.85rem',
+                    fontSize: '0.8rem',
                     textTransform: 'uppercase',
                     letterSpacing: '0.08em',
-                    color: 'var(--text-muted)',
+                    color: '#64748b',
                     fontWeight: 700,
                     marginBottom: '14px',
                   }}
@@ -315,11 +355,12 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
                         display: 'flex',
                         alignItems: 'center',
                         gap: '10px',
-                        fontSize: '0.95rem',
-                        color: 'var(--text-primary)',
+                        fontSize: '0.94rem',
+                        color: '#081028',
+                        fontWeight: 500,
                       }}
                     >
-                      <CheckCircle2 size={18} color="var(--accent-lime)" />
+                      <CheckCircle2 size={18} color="#1254ff" style={{ flexShrink: 0 }} />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -333,7 +374,7 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
                 position: 'relative',
                 zIndex: 2,
                 paddingTop: '24px',
-                borderTop: '1px solid var(--border-glass)',
+                borderTop: '1px solid rgba(15, 23, 42, 0.08)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
@@ -342,15 +383,14 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
               }}
             >
               <div>
-                <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'block' }}>
+                <span style={{ fontSize: '0.78rem', color: '#64748b', fontWeight: 600, display: 'block', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
                   Benchmark SLA
                 </span>
                 <span
                   style={{
-                    fontSize: '1.25rem',
+                    fontSize: '1.3rem',
                     fontWeight: 800,
-                    color: 'var(--accent-lime)',
-                    fontFamily: 'var(--font-mono)',
+                    color: '#1254ff',
                   }}
                 >
                   {steps[activeStep].metric}
@@ -360,11 +400,12 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
               <Link
                 href="/contact"
                 onClick={onOpenContact ? (e) => { e.preventDefault(); onOpenContact(); } : undefined}
-                className="btn-primary-blue"
+                className="tekni-btn-solid"
                 style={{
-                  padding: '12px 22px',
-                  fontSize: '0.9rem',
-                  borderRadius: '10px',
+                  padding: '11px 24px',
+                  fontSize: '0.92rem',
+                  borderRadius: '6px',
+                  fontWeight: 600,
                   textDecoration: 'none',
                   display: 'inline-flex',
                   alignItems: 'center',

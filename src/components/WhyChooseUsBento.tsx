@@ -2,33 +2,33 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 interface WhyChooseUsBentoProps {
   onOpenContact?: () => void;
 }
 
 export default function WhyChooseUsBento({ onOpenContact }: WhyChooseUsBentoProps) {
-  const [openItem, setOpenItem] = useState<number | null>(0);
+  const [openItem, setOpenItem] = useState<number>(0);
 
   const reasons = [
     {
       num: '01',
-      title: 'How we can help your business?',
+      title: 'How we empower your enterprise?',
       summary:
-        'We design, engineer, and deploy tailor-made enterprise software and high-performance native applications across all platforms and operating systems (iOS, Android, Windows, macOS, Linux, and Web) — whether modernizing an outdated ERP, launching an automated HR payroll engine, deploying an LMS, or integrating a HIPAA-compliant Hospital Information System (HISM). We align every line of code to your exact operational workflows.',
+        'We design, engineer, and deploy tailor-made software systems across all platforms and operating systems (iOS, Android, Windows, macOS, Linux, and Web) — whether modernizing an outdated ERP, launching an automated HR payroll engine, deploying an LMS, or integrating a HIPAA-compliant Hospital Information System (HISM). Every line of code matches your exact operational workflows.',
     },
     {
       num: '02',
-      title: 'Why become our partner?',
+      title: 'Why choose us as your technology partner?',
       summary:
-        'You retain 100% full source code ownership and intellectual property with zero recurring seat license fees. You collaborate directly with principal full-stack engineers who deliver working software in rapid agile sprints with contract-backed SLAs.',
+        'You retain 100% full source code ownership and intellectual property with zero recurring seat licensing penalties. You collaborate directly with principal full-stack engineers who deliver working software in rapid agile sprints with contract-backed SLAs.',
     },
     {
       num: '03',
-      title: 'What are the best of e-Tech Innovations?',
+      title: 'Enterprise reliability & high assurance',
       summary:
-        'Proven enterprise scale, battle-tested microservices architecture, rigorous data security (SOC 2, HIPAA, HL7/FHIR), and reliable post-launch maintenance with 99.99% uptime guarantees.',
+        'Proven enterprise scale, battle-tested microservices architecture, rigorous data security (SOC 2, HIPAA, HL7/FHIR), automated CI/CD deployment pipelines, and reliable 24/7 post-launch maintenance with 99.98% uptime guarantees.',
     },
   ];
 
@@ -36,165 +36,204 @@ export default function WhyChooseUsBento({ onOpenContact }: WhyChooseUsBentoProp
     <section
       id="why-choose-us"
       style={{
-        padding: '90px 0 110px',
+        padding: '110px 0',
+        backgroundColor: '#f8fafc',
+        color: '#0f172a',
         position: 'relative',
-        zIndex: 2,
+        overflow: 'hidden',
       }}
     >
+      {/* Background ambient subtle grid lines */}
       <div
         style={{
-          maxWidth: '1280px',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage:
+            'linear-gradient(rgba(18, 84, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(18, 84, 255, 0.04) 1px, transparent 1px)',
+          backgroundSize: '50px 50px',
+          opacity: 0.8,
+          pointerEvents: 'none',
+        }}
+      />
+
+      <div
+        style={{
+          maxWidth: '1320px',
           margin: '0 auto',
           padding: '0 24px',
+          position: 'relative',
+          zIndex: 2,
         }}
       >
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 480px), 1fr))',
             gap: '60px',
             alignItems: 'center',
           }}
         >
-          {/* Left Column: Our Company Heading & Paragraph */}
+          {/* Left Column: Tekni Heading, Badge & Highlights */}
           <div>
             <span
+              className="tekni-badge"
               style={{
-                fontSize: '0.82rem',
+                fontSize: '0.8rem',
+                padding: '6px 16px',
+                marginBottom: '18px',
+                borderRadius: '6px',
+                border: '1px solid rgba(18, 84, 255, 0.25)',
+                background: 'rgba(18, 84, 255, 0.08)',
+                color: '#1254ff',
                 fontWeight: 700,
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-                color: 'var(--text-secondary)',
-                display: 'inline-block',
-                marginBottom: '16px',
               }}
             >
-              OUR COMPANY
+              WHY CHOOSE US
             </span>
 
             <h2
               style={{
-                fontSize: 'clamp(2.2rem, 3.8vw, 3.4rem)',
+                fontSize: 'clamp(2.1rem, 3.8vw, 3.2rem)',
                 fontWeight: 800,
-                color: 'var(--text-primary)',
+                color: '#081028',
                 lineHeight: 1.18,
                 letterSpacing: '-0.025em',
                 marginBottom: '24px',
               }}
             >
               We’ve been thriving in{' '}
-              <span style={{ color: '#0066ff' }}>enterprise software &amp; native systems</span>
+              <span
+                style={{
+                  background: 'linear-gradient(90deg, #1254ff 0%, #00d2ff 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                enterprise software &amp; native systems
+              </span>
             </h2>
 
             <p
               style={{
-                fontSize: '1.02rem',
-                color: 'var(--text-secondary)',
-                lineHeight: 1.7,
+                fontSize: '1.05rem',
+                fontWeight: 500,
+                color: '#475569',
+                lineHeight: 1.75,
                 marginBottom: '36px',
-                maxWidth: '540px',
+                maxWidth: '560px',
               }}
             >
-              e-Tech Innovations specializes in technological and software development services across all operating systems and platforms — engineering custom ERPs, native mobile &amp; desktop applications (iOS, Android, Windows, macOS, Linux), automated HR systems, modern LMSs, cloud infrastructure, and hospital networks (HISM). We put a strong focus on the needs of your business to figure out solutions that best fit your demand and nail it.
+              e-Tech Innovations specializes in technological and software development services across all operating systems and platforms — engineering custom ERPs, native mobile &amp; desktop applications (iOS, Android, Windows, macOS, Linux), automated HR systems, modern LMSs, and hospital networks (HISM).
             </p>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '40px' }}>
+              {[
+                'Full IP & Source Code Ownership (Zero Seat Fees)',
+                'Direct Collaboration with Senior Software Architects',
+                '99.98% High-Availability Production Architecture',
+              ].map((point) => (
+                <div key={point} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <div
+                    style={{
+                      width: '24px',
+                      height: '24px',
+                      borderRadius: '50%',
+                      background: 'rgba(18, 84, 255, 0.1)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#1254ff',
+                      flexShrink: 0,
+                    }}
+                  >
+                    <CheckCircle2 size={16} color="#1254ff" />
+                  </div>
+                  <span style={{ fontSize: '0.96rem', color: '#1e293b', fontWeight: 600 }}>{point}</span>
+                </div>
+              ))}
+            </div>
 
             <Link
               href="/contact"
               onClick={onOpenContact ? (e) => { e.preventDefault(); onOpenContact(); } : undefined}
-              className="btn-primary-blue"
+              className="tekni-btn-solid"
               style={{
                 padding: '14px 32px',
-                fontSize: '0.98rem',
-                borderRadius: '8px',
+                fontSize: '0.96rem',
+                borderRadius: '6px',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '10px',
                 textDecoration: 'none',
               }}
             >
-              <span>Join us now</span>
+              <span>Get Consultation</span>
               <ArrowRight size={18} />
             </Link>
           </div>
 
-          {/* Right Column: Numbered List matching Mitech Reference */}
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          {/* Right Column: Numbered Interactive Rows (Tekni Light Style) */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {reasons.map((item, idx) => {
               const isOpen = openItem === idx;
               return (
                 <div
                   key={item.num}
+                  onClick={() => setOpenItem(idx)}
                   style={{
-                    borderTop: idx === 0 ? '1px solid var(--border-glass)' : 'none',
-                    borderBottom: '1px solid var(--border-glass)',
-                    padding: '28px 0',
-                    transition: 'all 0.25s ease',
+                    backgroundColor: '#ffffff',
+                    border: isOpen ? '1px solid #1254ff' : '1px solid #e2e8f0',
+                    borderRadius: '12px',
+                    padding: '28px 24px',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    boxShadow: isOpen
+                      ? '0 8px 24px rgba(15, 23, 42, 0.08)'
+                      : '0 2px 8px rgba(15, 23, 42, 0.03)',
                   }}
                 >
-                  <button
-                    onClick={() => setOpenItem(isOpen ? null : idx)}
-                    style={{
-                      width: '100%',
-                      background: 'transparent',
-                      border: 'none',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      textAlign: 'left',
-                      cursor: 'pointer',
-                      padding: 0,
-                      gap: '20px',
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-                      <span
-                        style={{
-                          fontSize: '1.4rem',
-                          fontWeight: 800,
-                          fontFamily: 'var(--font-mono)',
-                          color: isOpen ? '#0066ff' : 'var(--text-secondary)',
-                          transition: 'color 0.2s ease',
-                        }}
-                      >
-                        {item.num}
-                      </span>
-
-                      <h3
-                        style={{
-                          fontSize: '1.22rem',
-                          fontWeight: 700,
-                          color: isOpen ? 'var(--text-primary)' : 'var(--text-primary)',
-                          margin: 0,
-                          transition: 'color 0.2s ease',
-                        }}
-                      >
-                        {item.title}
-                      </h3>
-                    </div>
-
-                    <ArrowRight
-                      size={20}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '18px', marginBottom: isOpen ? '14px' : '0' }}>
+                    <span
                       style={{
-                        color: isOpen ? '#0066ff' : 'var(--text-secondary)',
-                        transform: isOpen ? 'translateX(6px)' : 'translateX(0)',
-                        transition: 'all 0.25s ease',
-                        flexShrink: 0,
+                        fontSize: '1.05rem',
+                        fontWeight: 800,
+                        color: '#1254ff',
+                        background: 'rgba(18, 84, 255, 0.08)',
+                        padding: '4px 10px',
+                        borderRadius: '6px',
+                        fontFamily: 'monospace',
                       }}
-                    />
-                  </button>
+                    >
+                      {item.num}
+                    </span>
+                    <h3
+                      style={{
+                        fontSize: '1.12rem',
+                        fontWeight: 700,
+                        color: isOpen ? '#1254ff' : '#081028',
+                        margin: 0,
+                        transition: 'color 0.2s',
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+                  </div>
 
                   {isOpen && (
-                    <div
+                    <p
                       style={{
-                        paddingLeft: '52px',
-                        paddingTop: '16px',
-                        fontSize: '0.96rem',
-                        color: 'var(--text-secondary)',
-                        lineHeight: 1.65,
+                        fontSize: '0.94rem',
+                        color: '#475569',
+                        lineHeight: 1.7,
+                        margin: 0,
+                        paddingLeft: '44px',
                       }}
                     >
                       {item.summary}
-                    </div>
+                    </p>
                   )}
                 </div>
               );

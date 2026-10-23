@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
 
 interface AccelerateBannerProps {
@@ -25,10 +25,9 @@ export default function AccelerateBanner({ onOpenContact }: AccelerateBannerProp
           if (bannerRef.current) {
             const rect = bannerRef.current.getBoundingClientRect();
             const viewportHeight = window.innerHeight;
-            // Only calculate if visible in viewport
             if (rect.top < viewportHeight && rect.bottom > 0) {
               const middle = rect.top + rect.height / 2 - viewportHeight / 2;
-              setParallaxOffset(middle * 0.22);
+              setParallaxOffset(middle * 0.18);
             }
           }
           ticking = false;
@@ -46,129 +45,148 @@ export default function AccelerateBanner({ onOpenContact }: AccelerateBannerProp
     <section
       ref={bannerRef}
       style={{
-        padding: '40px 0 80px',
         position: 'relative',
+        width: '100%',
+        minHeight: '460px',
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+        padding: '90px 0',
+        backgroundColor: '#ffffff',
+        borderTop: '1px solid rgba(15, 23, 42, 0.08)',
+        borderBottom: '1px solid rgba(15, 23, 42, 0.08)',
       }}
     >
+      {/* 1. Full-bleed Edge-to-Edge Parallax Background Image */}
       <div
         style={{
-          maxWidth: '1280px',
+          position: 'absolute',
+          top: '-20%',
+          left: 0,
+          right: 0,
+          bottom: '-20%',
+          transform: `translateY(${parallaxOffset}px) scale(1.08)`,
+          transition: 'transform 0.08s ease-out',
+          willChange: 'transform',
+          zIndex: 1,
+        }}
+      >
+        <Image
+          src="/images/team-banner.jpg"
+          alt="Accelerate Innovation With e-Tech Innovations"
+          fill
+          sizes="100vw"
+          style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
+          priority
+        />
+      </div>
+
+      {/* 2. Full-bleed Edge-to-Edge Clean Overlay */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: isLight
+            ? 'linear-gradient(90deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.92) 55%, rgba(255, 255, 255, 0.72) 100%)'
+            : 'linear-gradient(90deg, rgba(8, 16, 40, 0.96) 0%, rgba(8, 16, 40, 0.90) 55%, rgba(8, 16, 40, 0.75) 100%)',
+          zIndex: 2,
+        }}
+      />
+
+      {/* Decorative subtle grid */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage:
+            'linear-gradient(rgba(18, 84, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(18, 84, 255, 0.04) 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+          opacity: 0.7,
+          pointerEvents: 'none',
+          zIndex: 3,
+        }}
+      />
+
+      {/* 3. Centered Content Container */}
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 4,
+          maxWidth: '1320px',
+          width: '100%',
           margin: '0 auto',
           padding: '0 24px',
         }}
       >
-        <div
-          style={{
-            position: 'relative',
-            width: '100%',
-            minHeight: '440px',
-            borderRadius: '24px',
-            overflow: 'hidden',
-            border: isLight ? '1px solid rgba(0, 0, 0, 0.08)' : '1px solid rgba(255, 255, 255, 0.1)',
-            boxShadow: isLight ? '0 16px 40px rgba(0, 0, 0, 0.06)' : '0 24px 60px rgba(0, 0, 0, 0.4)',
-            display: 'flex',
-            alignItems: 'center',
-            transition: 'border 0.3s ease, box-shadow 0.3s ease',
-          }}
-        >
-          {/* Parallax Background Image Container */}
-          <div
-            style={{
-              position: 'absolute',
-              top: '-15%',
-              left: 0,
-              right: 0,
-              bottom: '-15%',
-              transform: `translateY(${parallaxOffset}px) scale(1.1)`,
-              transition: 'transform 0.08s ease-out',
-              willChange: 'transform',
-            }}
-          >
-            <Image
-              src="/images/team-banner.jpg"
-              alt="Accelerate Innovation With e-Tech Innovations"
-              fill
-              sizes="100vw"
-              style={{ objectFit: 'cover' }}
-              priority
-            />
-          </div>
-
-          {/* Clean Solid Overlay (White in Light Mode, Dark in Dark Mode) */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background: isLight ? 'rgba(255, 255, 255, 0.91)' : 'rgba(7, 9, 14, 0.82)',
-              transition: 'background 0.3s ease',
-            }}
-          />
-
-          {/* Content */}
-          <div
-            style={{
-              position: 'relative',
-              zIndex: 2,
-              padding: '60px 48px',
-              maxWidth: '680px',
-            }}
-          >
-            <div
+        <div style={{ maxWidth: '740px' }}>
+          {/* Badge */}
+          <div style={{ marginBottom: '20px' }}>
+            <span
+              className="tekni-badge"
               style={{
+                fontSize: '0.84rem',
+                padding: '7px 18px',
+                borderRadius: '6px',
+                border: '1px solid rgba(18, 84, 255, 0.25)',
+                background: 'rgba(18, 84, 255, 0.08)',
+                color: '#1254ff',
+                fontWeight: 700,
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                background: isLight ? 'rgba(0, 102, 255, 0.08)' : 'rgba(0, 102, 255, 0.2)',
-                border: isLight ? '1px solid rgba(0, 102, 255, 0.25)' : '1px solid rgba(0, 102, 255, 0.4)',
-                borderRadius: '30px',
-                padding: '6px 14px',
-                fontSize: '0.85rem',
-                fontWeight: 600,
-                color: '#0066ff',
-                marginBottom: '20px',
               }}
             >
+              <Sparkles size={14} color="#1254ff" />
               <span>Next-Gen Enterprise Engine</span>
-            </div>
+            </span>
+          </div>
 
-            <h2
-              style={{
-                fontSize: 'clamp(2.2rem, 4vw, 3.4rem)',
-                fontWeight: 800,
-                color: isLight ? '#0f172a' : '#ffffff',
-                lineHeight: 1.15,
-                letterSpacing: '-0.02em',
-                marginBottom: '20px',
-                transition: 'color 0.3s ease',
-              }}
-            >
-              Accelerate Operations With e-Tech Innovations’ Enterprise Software
-            </h2>
+          {/* Heading */}
+          <h2
+            style={{
+              fontSize: 'clamp(2.2rem, 3.8vw, 3.4rem)',
+              fontWeight: 800,
+              color: '#081028',
+              lineHeight: 1.16,
+              letterSpacing: '-0.025em',
+              marginBottom: '20px',
+            }}
+          >
+            Accelerate Operations With e-Tech Innovations’ Enterprise Software
+          </h2>
 
-            <p
-              style={{
-                fontSize: '1.05rem',
-                color: isLight ? '#475569' : '#cbd5e1',
-                lineHeight: 1.65,
-                marginBottom: '32px',
-                maxWidth: '560px',
-                transition: 'color 0.3s ease',
-              }}
-            >
-              From multi-warehouse ERP and automated HR payroll to scalable LMS platforms and Hospital Information Systems (HISM) — we engineer high-performance software tailored to your exact business rules.
-            </p>
+          {/* Description */}
+          <p
+            style={{
+              fontSize: '1.08rem',
+              fontWeight: 500,
+              color: '#475569',
+              lineHeight: 1.7,
+              marginBottom: '36px',
+              maxWidth: '620px',
+            }}
+          >
+            From multi-warehouse ERP and automated HR payroll to scalable LMS platforms and Hospital Information Systems (HISM) — we engineer high-performance software tailored to your exact business rules.
+          </p>
 
+          {/* Action Button: Discover more */}
+          <div>
             <Link
               href="/contact"
               onClick={onOpenContact ? (e) => { e.preventDefault(); onOpenContact(); } : undefined}
-              className="btn-primary-blue"
+              className="tekni-btn-solid"
               style={{
-                padding: '14px 30px',
+                padding: '16px 36px',
                 fontSize: '1rem',
+                fontWeight: 700,
+                borderRadius: '8px',
                 textDecoration: 'none',
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '8px',
+                gap: '10px',
+                letterSpacing: '0.01em',
               }}
             >
               <span>Discover more</span>

@@ -147,7 +147,7 @@ export default function TestimonialsSection() {
                       fontWeight: 700,
                       fontSize: '1.1rem',
                       border: '2px solid rgba(255, 255, 255, 0.2)',
-                      boxShadow: '0 0 15px rgba(0, 102, 255, 0.4)',
+                      boxShadow: '0 4px 12px rgba(15, 23, 42, 0.1)',
                     }}
                   >
                     {rev.avatar}

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import ScrollRevealProvider from "@/components/ScrollRevealProvider";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -90,7 +90,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={poppins.variable} data-scroll-behavior="smooth">
+    <html lang="en" className={plusJakartaSans.variable} data-theme="light" data-scroll-behavior="smooth">
       <head>
         <link rel="icon" href="/assets/favicon.png" type="image/png" sizes="any" />
         <link rel="apple-touch-icon" href="/assets/favicon.png" />

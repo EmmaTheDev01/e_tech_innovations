@@ -1,95 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600&display=swap');
 
-/* Default (Dark Mode) */
+/* Default (Light Mode) */
 :root {
-  --bg-dark: #121212;
-  --bg-card: rgba(28, 28, 30, 0.82);
-  --bg-card-hover: rgba(38, 38, 42, 0.92);
-  --bg-glass: rgba(255, 255, 255, 0.04);
-  --border-glass: rgba(255, 255, 255, 0.08);
-  --border-glass-bright: rgba(255, 255, 255, 0.16);
-  --border-glow-blue: rgba(0, 112, 243, 0.35);
-
-  --accent-blue: #0066ff;
-  --accent-blue-bright: #0070f3;
-  --accent-blue-glow: rgba(0, 102, 255, 0.3);
-
-  --accent-lime: #b4f736;
-  --accent-lime-hover: #c4ff47;
-  --accent-lime-glow: rgba(180, 247, 54, 0.25);
-  --accent-lime-tag-bg: rgba(180, 247, 54, 0.08);
-  --accent-lime-tag-border: rgba(180, 247, 54, 0.2);
-
-  --accent-cyan: #00f0ff;
-  --accent-purple: #9d4edd;
-
-  --text-primary: #ffffff;
-  --text-secondary: #9ca3af;
-  --text-muted: #71717a;
-  --card-watermark: rgba(255, 255, 255, 0.06);
-
-  --grid-line: rgba(255, 255, 255, 0.04);
-  --nav-bg: rgba(18, 18, 18, 0.88);
-  --modal-bg: rgba(18, 18, 18, 0.98);
-
-  --font-sans: var(--font-poppins, 'Poppins'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'Space Grotesk', monospace;
-}
-
-[data-theme="dark"] {
-  --bg-dark: #121212;
-  --bg-card: rgba(28, 28, 30, 0.82);
-  --bg-card-hover: rgba(38, 38, 42, 0.92);
-  --bg-glass: rgba(255, 255, 255, 0.04);
-  --border-glass: rgba(255, 255, 255, 0.08);
-  --border-glass-bright: rgba(255, 255, 255, 0.16);
-  --border-glow-blue: rgba(0, 112, 243, 0.35);
-
-  --accent-blue: #0066ff;
-  --accent-blue-bright: #0070f3;
-  --accent-blue-glow: rgba(0, 102, 255, 0.3);
-
-  --accent-lime: #b4f736;
-  --accent-lime-hover: #c4ff47;
-  --accent-lime-glow: rgba(180, 247, 54, 0.25);
-  --accent-lime-tag-bg: rgba(180, 247, 54, 0.08);
-  --accent-lime-tag-border: rgba(180, 247, 54, 0.2);
-
-  --accent-cyan: #00f0ff;
-  --accent-purple: #9d4edd;
-
-  --text-primary: #ffffff;
-  --text-secondary: #9ca3af;
-  --text-muted: #71717a;
-  --card-watermark: rgba(255, 255, 255, 0.06);
-
-  --grid-line: rgba(255, 255, 255, 0.04);
-  --nav-bg: rgba(18, 18, 18, 0.88);
-  --modal-bg: rgba(18, 18, 18, 0.98);
-}
-
-/* Light Mode Overrides */
-[data-theme="light"] {
   --bg-dark: #ffffff;
   --bg-card: #f8fafc;
   --bg-card-hover: #f1f5f9;
   --bg-glass: rgba(15, 23, 42, 0.03);
   --border-glass: rgba(15, 23, 42, 0.09);
   --border-glass-bright: rgba(15, 23, 42, 0.18);
-  --border-glow-blue: transparent;
+  --border-glow-blue: rgba(18, 84, 255, 0.15);
 
-  --accent-blue: #0066ff;
-  --accent-blue-bright: #0052cc;
-  --accent-blue-glow: transparent;
+  --accent-blue: #1254ff;
+  --accent-blue-bright: #0066ff;
+  --accent-blue-glow: rgba(18, 84, 255, 0.25);
 
-  --accent-lime: #41b94b;
-  --accent-lime-hover: #36a43f;
-  --accent-lime-glow: transparent;
-  --accent-lime-tag-bg: rgba(65, 185, 75, 0.12);
-  --accent-lime-tag-border: rgba(65, 185, 75, 0.28);
+  --accent-lime: #00d2ff;
+  --accent-lime-hover: #38bdf8;
+  --accent-lime-glow: rgba(0, 210, 255, 0.2);
+  --accent-lime-tag-bg: rgba(18, 84, 255, 0.08);
+  --accent-lime-tag-border: rgba(18, 84, 255, 0.2);
 
-  --accent-cyan: #0284c7;
-  --accent-purple: #7c3aed;
+  --accent-cyan: #00d2ff;
+  --accent-blue-gradient: linear-gradient(90deg, #1254ff 0%, #0099ff 100%);
+  --accent-blue-deep: #0a38b8;
+  --tekni-blue: #1254ff;
+  --tekni-navy: #081028;
+  --tekni-navy-light: #0d1b3e;
 
   --text-primary: #0a0f1d;
   --text-secondary: #475569;
@@ -97,43 +33,47 @@
   --card-watermark: rgba(15, 23, 42, 0.04);
 
   --grid-line: rgba(15, 23, 42, 0.04);
-  --nav-bg: rgba(255, 255, 255, 0.94);
+  --nav-bg: rgba(255, 255, 255, 0.96);
   --modal-bg: #ffffff;
+
+  --font-sans: var(--font-plus-jakarta-sans, 'Plus Jakarta Sans'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
 }
 
-/* Automatically adapt to system preference if data-theme not explicitly set */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --bg-dark: #ffffff;
-    --bg-card: #f8fafc;
-    --bg-card-hover: #f1f5f9;
-    --bg-glass: rgba(15, 23, 42, 0.03);
-    --border-glass: rgba(15, 23, 42, 0.09);
-    --border-glass-bright: rgba(15, 23, 42, 0.18);
-    --border-glow-blue: transparent;
+[data-theme="light"] {
+  --bg-dark: #ffffff;
+  --bg-card: #f8fafc;
+  --bg-card-hover: #f1f5f9;
+  --bg-glass: rgba(15, 23, 42, 0.03);
+  --border-glass: rgba(15, 23, 42, 0.09);
+  --border-glass-bright: rgba(15, 23, 42, 0.18);
+  --border-glow-blue: rgba(18, 84, 255, 0.15);
 
-    --accent-blue: #0066ff;
-    --accent-blue-bright: #0052cc;
-    --accent-blue-glow: transparent;
+  --accent-blue: #1254ff;
+  --accent-blue-bright: #0066ff;
+  --accent-blue-glow: rgba(18, 84, 255, 0.25);
 
-    --accent-lime: #41b94b;
-    --accent-lime-hover: #36a43f;
-    --accent-lime-glow: transparent;
-    --accent-lime-tag-bg: rgba(65, 185, 75, 0.12);
-    --accent-lime-tag-border: rgba(65, 185, 75, 0.28);
+  --accent-lime: #00d2ff;
+  --accent-lime-hover: #38bdf8;
+  --accent-lime-glow: rgba(0, 210, 255, 0.2);
+  --accent-lime-tag-bg: rgba(18, 84, 255, 0.08);
+  --accent-lime-tag-border: rgba(18, 84, 255, 0.2);
 
-    --accent-cyan: #0284c7;
-    --accent-purple: #7c3aed;
+  --accent-cyan: #00d2ff;
+  --accent-blue-gradient: linear-gradient(90deg, #1254ff 0%, #0099ff 100%);
+  --accent-blue-deep: #0a38b8;
+  --tekni-blue: #1254ff;
+  --tekni-navy: #081028;
+  --tekni-navy-light: #0d1b3e;
 
-    --text-primary: #0a0f1d;
-    --text-secondary: #475569;
-    --text-muted: #64748b;
-    --card-watermark: rgba(15, 23, 42, 0.04);
+  --text-primary: #0a0f1d;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --card-watermark: rgba(15, 23, 42, 0.04);
 
-    --grid-line: rgba(15, 23, 42, 0.04);
-    --nav-bg: rgba(255, 255, 255, 0.94);
-    --modal-bg: #ffffff;
-  }
+  --grid-line: rgba(15, 23, 42, 0.04);
+  --nav-bg: rgba(255, 255, 255, 0.96);
+  --modal-bg: #ffffff;
 }
 
 /* Brand Logo Theme Adaptation */
@@ -184,23 +124,21 @@ html[data-scroll-behavior="smooth"] {
 
 html {
   background-color: var(--bg-dark);
-  overflow-x: hidden;
-  max-width: 100vw;
+  overflow-x: clip;
 }
 
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-dark);
   color: var(--text-primary);
-  overflow-x: hidden;
-  max-width: 100vw;
+  overflow-x: clip;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
-  font-weight: 300;
-  font-size: 0.94rem;
-  letter-spacing: -0.01em;
+  line-height: 1.65;
+  font-weight: 450;
+  font-size: 0.98rem;
+  letter-spacing: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -275,7 +213,7 @@ body {
   animation: pulseDot 2s infinite;
 }
 
-/* Slim & Refined Typography System */
+/* Tekni Plus Jakarta Sans Typography System */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
   letter-spacing: -0.025em;
@@ -283,76 +221,55 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1,
-h1[style*="font-weight"],
-h1[style*="fontWeight"],
 #hero h1 {
-  font-weight: 300 !important;
-  font-size: clamp(2rem, 3.2vw, 3.4rem) !important;
-  line-height: 1.15 !important;
+  font-weight: 700 !important;
+  font-size: clamp(2.3rem, 4.4vw, 4.2rem) !important;
+  line-height: 1.14 !important;
   letter-spacing: -0.035em !important;
 }
 
-h2,
-h2[style*="font-weight"],
-h2[style*="fontWeight"] {
-  font-weight: 350 !important;
-  font-size: clamp(1.6rem, 2.5vw, 2.3rem) !important;
-  line-height: 1.22 !important;
+h2 {
+  font-weight: 700 !important;
+  font-size: clamp(1.8rem, 3.2vw, 2.9rem) !important;
+  line-height: 1.2 !important;
   letter-spacing: -0.025em !important;
 }
 
-h3,
-h3[style*="font-weight"],
-h3[style*="fontWeight"] {
-  font-weight: 400 !important;
-  font-size: 1.15rem !important;
+h3 {
+  font-weight: 600 !important;
+  font-size: 1.22rem !important;
   line-height: 1.3 !important;
 }
 
-h4,
-h4[style*="font-weight"],
-h4[style*="fontWeight"] {
-  font-weight: 450 !important;
-  font-size: 1rem !important;
+h4 {
+  font-weight: 600 !important;
+  font-size: 1.05rem !important;
   line-height: 1.35 !important;
 }
 
 p {
-  font-weight: 300;
-  letter-spacing: -0.005em;
+  font-family: var(--font-sans);
+  font-weight: 450;
+  letter-spacing: 0;
+  line-height: 1.68;
 }
 
 .section-title {
-  font-size: clamp(1.8rem, 2.8vw, 2.5rem) !important;
-  font-weight: 350 !important;
-  line-height: 1.18 !important;
+  font-size: clamp(2rem, 3.4vw, 3rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
   letter-spacing: -0.025em !important;
   color: var(--text-primary);
   margin-bottom: 18px;
 }
 
 .section-subtitle {
-  font-size: 0.96rem !important;
+  font-size: 1.02rem !important;
   color: var(--text-secondary);
-  line-height: 1.65;
-  max-width: 600px;
-  font-weight: 300 !important;
-  letter-spacing: -0.005em !important;
-}
-
-/* Site-wide mapping for heavy bold weights to refined slim weights */
-[style*="font-weight: 800"],
-[style*="font-weight: 700"],
-[style*="font-weight: 900"],
-[style*="font-weight:800"],
-[style*="font-weight:700"],
-[style*="font-weight:900"] {
+  line-height: 1.68;
+  max-width: 620px;
   font-weight: 450 !important;
-}
-
-[style*="font-weight: 600"],
-[style*="font-weight:600"] {
-  font-weight: 400 !important;
+  letter-spacing: 0 !important;
 }
 
 /* Refined Slim Buttons */
@@ -369,7 +286,7 @@ p {
   padding: 12px 24px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 20px rgba(0, 102, 255, 0.35);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
   cursor: pointer;
   transition: all 0.25s ease;
   text-decoration: none;
@@ -377,7 +294,7 @@ p {
 
 .btn-primary-blue:hover {
   background: var(--accent-blue-bright);
-  box-shadow: 0 6px 26px rgba(0, 102, 255, 0.55);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
   transform: translateY(-2px);
 }
 
@@ -448,6 +365,133 @@ p {
   color: #121212 !important;
   stroke: #121212 !important;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+/* Tekni IT Solutions Design System Classes (No Purple, Electric Blue & Cyan) */
+.tekni-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(18, 84, 255, 0.3);
+  background: rgba(18, 84, 255, 0.08);
+  color: #1254ff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(8px);
+}
+
+[data-theme="dark"] .tekni-badge {
+  background: rgba(18, 84, 255, 0.15);
+  border-color: rgba(18, 84, 255, 0.45);
+  color: #38bdf8;
+}
+
+.tekni-btn-gradient {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(90deg, #1254ff 0%, #0099ff 100%);
+  color: #ffffff !important;
+  font-weight: 500;
+  font-size: 0.98rem;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tekni-btn-gradient:hover {
+  background: linear-gradient(90deg, #0940d6 0%, #0080e6 100%);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+  transform: translateY(-2px);
+}
+
+.tekni-btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #1254ff;
+  color: #ffffff !important;
+  font-weight: 500;
+  font-size: 0.94rem;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  transition: all 0.25s ease;
+}
+
+.tekni-btn-solid:hover {
+  background: #0940d6;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+  transform: translateY(-2px);
+}
+
+.tekni-btn-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #1254ff;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.tekni-btn-circle:hover {
+  background: #0099ff;
+  transform: scale(1.08) rotate(45deg);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+}
+
+.tekni-angled-logo {
+  position: relative;
+  background: #ffffff;
+  padding: 14px 44px 14px 28px;
+  clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%);
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+
+.tekni-card-service {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  padding: 36px 30px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+.tekni-card-service:hover {
+  transform: translateY(-6px);
+  border-color: rgba(18, 84, 255, 0.35);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+}
+
+.tekni-topbar {
+  background: #081028;
+  color: #94a3b8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.82rem;
+  padding: 8px 0;
 }
 
 .arrow-cutout-btn:hover {
@@ -637,16 +681,16 @@ p {
 }
 
 [data-theme="light"] .btn-primary-blue:hover {
-  box-shadow: 0 3px 8px rgba(0, 102, 255, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08) !important;
 }
 
 [data-theme="light"] .arrow-cutout-btn {
-  background: #41b94b !important;
-  box-shadow: 0 4px 12px rgba(65, 185, 75, 0.2) !important;
+  background: #1254ff !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08) !important;
 }
 
 [data-theme="light"] .arrow-cutout-btn:hover {
-  box-shadow: 0 10px 24px rgba(65, 185, 75, 0.35) !important;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12) !important;
 }
 
 [data-theme="light"] .arrow-cutout-btn svg {
@@ -658,7 +702,7 @@ p {
 .creachat-studio-card {
   background: #1e1e1f;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 30px rgba(0, 102, 255, 0.2);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
 }
 
 [data-theme="light"] .creachat-studio-card {
@@ -693,27 +737,27 @@ p {
 }
 
 [data-theme="light"] .creachat-user-bubble {
-  background: rgba(65, 185, 75, 0.12) !important;
-  color: #41b94b !important;
-  border: 1px solid rgba(65, 185, 75, 0.28) !important;
+  background: rgba(18, 84, 255, 0.08) !important;
+  color: #1254ff !important;
+  border: 1px solid rgba(18, 84, 255, 0.2) !important;
 }
 
 .creachat-send-btn {
-  background: #b4f736;
-  color: #121212;
+  background: #1254ff;
+  color: #ffffff;
 }
 
 [data-theme="light"] .creachat-send-btn {
-  background: #41b94b !important;
+  background: #1254ff !important;
   color: #ffffff !important;
 }
 
 /* Feature Icons (Enterprise Architecture & Tailored Workflows) */
 .service-feature-icon {
   background: #071630;
-  border: 1px solid #0066ff;
-  color: #0066ff;
-  box-shadow: 0 0 25px rgba(0, 102, 255, 0.4), inset 0 0 15px rgba(0, 112, 243, 0.25);
+  border: 1px solid #1254ff;
+  color: #1254ff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
 }
 
 [data-theme="light"] .service-feature-icon {
@@ -767,16 +811,16 @@ p {
   }
 
   :root:not([data-theme="dark"]) .btn-primary-blue:hover {
-    box-shadow: 0 3px 8px rgba(0, 102, 255, 0.2) !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08) !important;
   }
 
   :root:not([data-theme="dark"]) .arrow-cutout-btn {
-    background: #41b94b !important;
-    box-shadow: 0 4px 12px rgba(65, 185, 75, 0.2) !important;
+    background: #1254ff !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08) !important;
   }
 
   :root:not([data-theme="dark"]) .arrow-cutout-btn:hover {
-    box-shadow: 0 10px 24px rgba(65, 185, 75, 0.35) !important;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12) !important;
   }
 
   :root:not([data-theme="dark"]) .arrow-cutout-btn svg {

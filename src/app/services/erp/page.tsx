@@ -163,7 +163,7 @@ export default function ERPServicePage() {
                   borderRadius: '24px',
                   overflow: 'hidden',
                   border: '1px solid var(--border-glass)',
-                  boxShadow: '0 20px 50px rgba(0, 0, 0, 0.25)',
+                  boxShadow: '0 12px 36px rgba(15, 23, 42, 0.08)',
                 }}
               >
                 <Image

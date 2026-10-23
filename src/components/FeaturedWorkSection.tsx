@@ -11,6 +11,8 @@ import {
   ArrowRight,
   X,
   Cpu,
+  Sparkles,
+  ArrowUpRight,
 } from 'lucide-react';
 
 interface FeaturedWorkSectionProps {
@@ -26,9 +28,9 @@ export default function FeaturedWorkSection({ onOpenContact }: FeaturedWorkSecti
       name: 'ERP for Itracom Holding Group',
       systemType: 'Enterprise ERP System',
       tagline: 'Multi-Entity Resource Planning, Supply Chain & Financial Ledgers',
-      image: '/images/work-erp.jpg',
+      image: '/images/cliparts/erp.jpg',
       icon: <Building2 size={22} />,
-      accentColor: '#0066ff',
+      accentColor: '#1254ff',
       badge: 'Industrial ERP',
       metrics: [
         { label: 'Supply Chain Sync', value: '100% Real-Time' },
@@ -54,9 +56,9 @@ export default function FeaturedWorkSection({ onOpenContact }: FeaturedWorkSecti
       name: 'AI Powered e-Recruitment for Coopedu PLC',
       systemType: 'Enterprise AI & Intelligent Recruitment',
       tagline: 'Intelligent Candidate Screening, Resume Scoring & Automated Hiring Pipelines',
-      image: '/images/work-hr.jpg',
+      image: '/images/cliparts/ai-recruitment.jpg',
       icon: <Cpu size={22} />,
-      accentColor: '#41b94b',
+      accentColor: '#1254ff',
       badge: 'AI Systems',
       metrics: [
         { label: 'Screening Speed', value: '10x Faster' },
@@ -82,9 +84,9 @@ export default function FeaturedWorkSection({ onOpenContact }: FeaturedWorkSecti
       name: 'Real-Time Stock Management System',
       systemType: 'Inventory & Warehouse Logistics',
       tagline: 'Live Inventory Sync, Barcode Auditing & Multi-Location Stock Tracking',
-      image: '/images/work-lms.jpg',
+      image: '/images/cliparts/stock.jpg',
       icon: <Layers size={22} />,
-      accentColor: '#00f0ff',
+      accentColor: '#1254ff',
       badge: 'Stock Logistics',
       metrics: [
         { label: 'Stock Visibility', value: '100% Real-Time' },
@@ -110,9 +112,9 @@ export default function FeaturedWorkSection({ onOpenContact }: FeaturedWorkSecti
       name: 'Enterprise HR Management System (HRMS)',
       systemType: 'HR & Payroll Platform',
       tagline: 'Automated Payroll, Biometric Time Attendance & Employee Portals',
-      image: '/images/work-hism.jpg',
+      image: '/images/cliparts/hrms.jpg',
       icon: <Users size={22} />,
-      accentColor: '#10b981',
+      accentColor: '#1254ff',
       badge: 'HR & Payroll',
       metrics: [
         { label: 'Payroll Accuracy', value: '100.00%' },
@@ -139,114 +141,116 @@ export default function FeaturedWorkSection({ onOpenContact }: FeaturedWorkSecti
     <section
       id="featured-work"
       style={{
-        padding: '90px 0 110px',
+        padding: '100px 0 110px',
+        backgroundColor: '#ffffff',
         position: 'relative',
         zIndex: 2,
       }}
     >
       <div
         style={{
-          maxWidth: '1280px',
+          maxWidth: '1320px',
           margin: '0 auto',
           padding: '0 24px',
         }}
       >
-        {/* Section Header Matching Mitech Reference */}
+        {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 60px' }}>
           <span
+            className="tekni-badge"
             style={{
-              fontSize: '0.82rem',
+              fontSize: '0.8rem',
+              padding: '6px 16px',
+              borderRadius: '6px',
+              border: '1px solid rgba(18, 84, 255, 0.25)',
+              background: 'rgba(18, 84, 255, 0.08)',
+              color: '#1254ff',
               fontWeight: 700,
-              letterSpacing: '0.18em',
-              textTransform: 'uppercase',
-              color: 'var(--text-secondary)',
-              display: 'inline-block',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
               marginBottom: '16px',
             }}
           >
-            HIRE US, WHY NOT?
+            <span>PROVEN ENTERPRISE DELIVERIES</span>
           </span>
 
           <h2
             style={{
-              fontSize: 'clamp(2.1rem, 3.6vw, 3.3rem)',
+              fontSize: 'clamp(2.1rem, 3.6vw, 3.2rem)',
               fontWeight: 800,
-              color: 'var(--text-primary)',
+              color: '#081028',
               lineHeight: 1.2,
               letterSpacing: '-0.025em',
             }}
           >
-            How we claim to <span style={{ color: '#0066ff' }}>excel?</span>
+            Featured Case Studies &amp;{' '}
+            <span
+              style={{
+                background: 'linear-gradient(90deg, #1254ff 0%, #00d2ff 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              Enterprise Systems
+            </span>
           </h2>
         </div>
 
-        {/* 4 Case Studies / Featured Work Cards matching Mitech Image 5 */}
-        <div
-          className="scroll-reveal-stagger"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
-            gap: '32px',
-            marginBottom: '48px',
-          }}
-        >
+        {/* 4 Case Studies / Featured Work Cards (Compact 2x2 Horizontal Layout) */}
+        <div className="featured-work-grid">
           {projects.map((item, idx) => (
             <div
               key={item.id}
               className="featured-work-card"
+              onClick={() => setActiveModalProject(idx)}
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                transition: 'transform 0.3s ease',
+                backgroundColor: '#ffffff',
+                border: '1px solid rgba(15, 23, 42, 0.08)',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                boxShadow: '0 2px 10px rgba(15, 23, 42, 0.04)',
+                cursor: 'pointer',
+                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-3px)';
+                e.currentTarget.style.borderColor = '#cbd5e1';
+                e.currentTarget.style.boxShadow = '0 6px 18px rgba(15, 23, 42, 0.06)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.borderColor = 'rgba(15, 23, 42, 0.08)';
+                e.currentTarget.style.boxShadow = '0 2px 10px rgba(15, 23, 42, 0.04)';
               }}
             >
-              {/* Photo Box with Hover Overlay & Centered Learn More Button */}
-              <div
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  height: '250px',
-                  borderRadius: '16px',
-                  overflow: 'hidden',
-                  marginBottom: '20px',
-                  boxShadow: '0 12px 30px rgba(0, 0, 0, 0.25)',
-                  cursor: 'pointer',
-                }}
-                onClick={() => setActiveModalProject(idx)}
-              >
+              {/* Clipart Illustration Container */}
+              <div className="card-clipart-container">
                 <Image
                   src={item.image}
                   alt={item.name}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, 240px"
                   style={{
                     objectFit: 'cover',
+                    objectPosition: 'center',
                     transition: 'transform 0.4s ease',
                   }}
                   className="card-image-zoom"
                 />
+              </div>
 
-                {/* Constant Subtle Tint */}
+              {/* Card Details */}
+              <div className="card-details-container">
+                {/* Top Row: Category Tag & Metric Chip */}
                 <div
                   style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'rgba(7, 10, 20, 0.45)',
-                  }}
-                />
-
-                {/* Title Overlay in center of image */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    padding: '24px',
                     display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
                     alignItems: 'center',
-                    textAlign: 'center',
-                    zIndex: 2,
+                    justifyContent: 'space-between',
+                    flexWrap: 'wrap',
+                    gap: '8px',
+                    marginBottom: '8px',
                   }}
                 >
                   <span
@@ -254,374 +258,354 @@ export default function FeaturedWorkSection({ onOpenContact }: FeaturedWorkSecti
                       fontSize: '0.74rem',
                       fontWeight: 700,
                       textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      color: 'var(--accent-lime)',
-                      marginBottom: '8px',
+                      letterSpacing: '0.06em',
+                      color: '#1254ff',
                     }}
                   >
                     {item.systemType}
                   </span>
 
-                  <h3
+                  {/* Metric Chip */}
+                  <div
                     style={{
-                      fontSize: '1.25rem',
-                      fontWeight: 800,
-                      color: '#ffffff',
-                      lineHeight: 1.3,
-                      margin: 0,
-                      textShadow: '0 2px 10px rgba(0, 0, 0, 0.6)',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      background: 'rgba(18, 84, 255, 0.08)',
+                      border: '1px solid rgba(18, 84, 255, 0.2)',
+                      padding: '3px 8px',
+                      borderRadius: '4px',
+                      fontSize: '0.75rem',
+                      fontWeight: 700,
+                      color: '#1254ff',
                     }}
                   >
-                    {item.name}
-                  </h3>
+                    <span>{item.metrics[0].value}</span>
+                    <span style={{ opacity: 0.4 }}>•</span>
+                    <span style={{ color: '#081028', fontWeight: 600 }}>{item.metrics[0].label}</span>
+                  </div>
                 </div>
 
-                {/* Hover Reveal Overlay with White Button matching Mitech */}
-                <div
-                  className="card-hover-overlay"
+                {/* Project Title */}
+                <h3
                   style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'rgba(0, 102, 255, 0.88)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    zIndex: 3,
-                    opacity: 0,
-                    transition: 'opacity 0.3s ease',
-                    padding: '20px',
-                    textAlign: 'center',
+                    fontSize: '1.15rem',
+                    fontWeight: 800,
+                    color: '#081028',
+                    lineHeight: 1.3,
+                    margin: '0 0 8px',
                   }}
                 >
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setActiveModalProject(idx);
-                    }}
+                  {item.name}
+                </h3>
+
+                {/* Description */}
+                <p
+                  style={{
+                    fontSize: '0.86rem',
+                    color: '#475569',
+                    lineHeight: 1.5,
+                    margin: '0 0 14px',
+                    display: '-webkit-box',
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
+                  }}
+                >
+                  {item.description}
+                </p>
+
+                {/* Learn More Button */}
+                <div style={{ marginTop: 'auto' }}>
+                  <span
                     style={{
-                      background: '#ffffff',
-                      color: '#0066ff',
+                      color: '#1254ff',
+                      fontSize: '0.88rem',
                       fontWeight: 700,
-                      fontSize: '0.9rem',
-                      padding: '10px 24px',
-                      borderRadius: '6px',
-                      border: 'none',
-                      cursor: 'pointer',
-                      boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
-                      transition: 'transform 0.2s',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '5px',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
                   >
-                    Learn more
-                  </button>
+                    <span>Learn more</span>
+                    <ArrowRight size={15} />
+                  </span>
                 </div>
-              </div>
-
-              {/* Caption Text Below Card matching Mitech */}
-              <p
-                style={{
-                  fontSize: '0.92rem',
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.6,
-                  marginBottom: '12px',
-                }}
-              >
-                {item.description}
-              </p>
-
-              {/* Key Metric Pill */}
-              <div
-                style={{
-                  fontSize: '0.8rem',
-                  fontWeight: 700,
-                  color: '#0066ff',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                }}
-              >
-                <span>{item.metrics[0].value}</span>
-                <span>•</span>
-                <span>{item.metrics[0].label}</span>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Bottom Link matching Mitech reference: "Learn more about how we work →" */}
-        <div style={{ textAlign: 'center', marginTop: '20px' }}>
-          <Link
-            href="/contact"
-            style={{
-              background: 'transparent',
-              border: 'none',
-              color: '#0066ff',
-              fontSize: '1.05rem',
-              fontWeight: 700,
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              cursor: 'pointer',
-              padding: '6px 12px',
-              textDecoration: 'none',
-              transition: 'gap 0.2s',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.gap = '14px')}
-            onMouseLeave={(e) => (e.currentTarget.style.gap = '8px')}
-          >
-            <span>Learn more about how our enterprise systems work</span>
-            <ArrowRight size={18} />
-          </Link>
-        </div>
-
-        {/* Modal for Deep-Dive System Architecture */}
-        {activeModalProject !== null && (
-          <div
-            style={{
-              position: 'fixed',
-              inset: 0,
-              zIndex: 100,
-              background: 'rgba(0, 0, 0, 0.75)',
-              backdropFilter: 'blur(10px)',
-              WebkitBackdropFilter: 'blur(10px)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '24px',
-            }}
-            onClick={() => setActiveModalProject(null)}
-          >
-            <div
-              className="glass-panel"
-              style={{
-                maxWidth: '780px',
-                width: '100%',
-                maxHeight: '90vh',
-                overflowY: 'auto',
-                background: 'var(--bg-card)',
-                borderRadius: '24px',
-                border: '1px solid var(--border-glass)',
-                padding: 'clamp(20px, 4vw, 40px)',
-                boxShadow: '0 25px 60px rgba(0, 0, 0, 0.5)',
-                position: 'relative',
-              }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setActiveModalProject(null)}
-                aria-label="Close modal"
-                style={{
-                  position: 'absolute',
-                  top: '24px',
-                  right: '24px',
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  border: '1px solid var(--border-glass)',
-                  borderRadius: '50%',
-                  width: '36px',
-                  height: '36px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'var(--text-primary)',
-                  cursor: 'pointer',
-                }}
-              >
-                <X size={18} />
-              </button>
-
-              {/* Modal Content */}
-              {(() => {
-                const proj = projects[activeModalProject];
-                return (
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-                      <span
-                        style={{
-                          fontSize: '0.8rem',
-                          fontWeight: 700,
-                          padding: '4px 12px',
-                          borderRadius: '20px',
-                          background: 'rgba(0, 102, 255, 0.1)',
-                          color: '#0066ff',
-                          border: '1px solid rgba(0, 102, 255, 0.25)',
-                        }}
-                      >
-                        {proj.systemType}
-                      </span>
-                      <span style={{ fontSize: '0.78rem', color: 'var(--accent-lime)', fontWeight: 600 }}>
-                        {proj.liveStatus}
-                      </span>
-                    </div>
-
-                    <h3
-                      style={{
-                        fontSize: '1.8rem',
-                        fontWeight: 800,
-                        color: 'var(--text-primary)',
-                        marginBottom: '8px',
-                      }}
-                    >
-                      {proj.name}
-                    </h3>
-
-                    <p
-                      style={{
-                        fontSize: '0.96rem',
-                        fontWeight: 600,
-                        color: proj.accentColor,
-                        marginBottom: '20px',
-                      }}
-                    >
-                      {proj.tagline}
-                    </p>
-
-                    <p
-                      style={{
-                        fontSize: '0.94rem',
-                        color: 'var(--text-secondary)',
-                        lineHeight: 1.65,
-                        marginBottom: '28px',
-                      }}
-                    >
-                      {proj.fullOverview}
-                    </p>
-
-                    {/* Metrics */}
-                    <div
-                      style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(3, 1fr)',
-                        gap: '12px',
-                        marginBottom: '28px',
-                      }}
-                    >
-                      {proj.metrics.map((m) => (
-                        <div
-                          key={m.label}
-                          style={{
-                            background: 'rgba(255, 255, 255, 0.03)',
-                            border: '1px solid var(--border-glass)',
-                            borderRadius: '12px',
-                            padding: '12px',
-                            textAlign: 'center',
-                          }}
-                        >
-                          <div style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--text-primary)' }}>
-                            {m.value}
-                          </div>
-                          <div style={{ fontSize: '0.74rem', color: 'var(--text-secondary)' }}>{m.label}</div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Modules */}
-                    <h4
-                      style={{
-                        fontSize: '1rem',
-                        fontWeight: 700,
-                        color: 'var(--text-primary)',
-                        marginBottom: '12px',
-                      }}
-                    >
-                      Core Engineered Modules
-                    </h4>
-
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
-                      {proj.modules.map((mod) => (
-                        <div
-                          key={mod}
-                          style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '10px',
-                            fontSize: '0.88rem',
-                            color: 'var(--text-secondary)',
-                          }}
-                        >
-                          <CheckCircle2 size={16} color="#0066ff" style={{ flexShrink: 0 }} />
-                          <span>{mod}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Tech Stack */}
-                    <div style={{ marginBottom: '32px' }}>
-                      <span
-                        style={{
-                          fontSize: '0.75rem',
-                          textTransform: 'uppercase',
-                          fontWeight: 700,
-                          letterSpacing: '0.05em',
-                          color: 'var(--text-secondary)',
-                          display: 'block',
-                          marginBottom: '8px',
-                        }}
-                      >
-                        Production Tech Stack
-                      </span>
-                      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                        {proj.techStack.map((tech) => (
-                          <span
-                            key={tech}
-                            style={{
-                              fontSize: '0.78rem',
-                              fontFamily: 'var(--font-mono)',
-                              padding: '4px 10px',
-                              borderRadius: '6px',
-                              background: 'rgba(0, 102, 255, 0.1)',
-                              color: '#0066ff',
-                              border: '1px solid rgba(0, 102, 255, 0.2)',
-                            }}
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* CTA in modal */}
-                    <Link
-                      href="/contact"
-                      onClick={(e) => {
-                        setActiveModalProject(null);
-                        if (onOpenContact) {
-                          e.preventDefault();
-                          onOpenContact();
-                        }
-                      }}
-                      className="btn-primary-blue"
-                      style={{
-                        width: '100%',
-                        padding: '14px',
-                        fontSize: '0.95rem',
-                        borderRadius: '10px',
-                        textDecoration: 'none',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      Request System Architecture &amp; Demo
-                    </Link>
-                  </div>
-                );
-              })()}
-            </div>
-          </div>
-        )}
       </div>
 
       <style jsx>{`
-        .featured-work-card:hover .card-image-zoom {
-          transform: scale(1.08);
+        .featured-work-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+          margin-bottom: 40px;
         }
-        .featured-work-card:hover .card-hover-overlay {
-          opacity: 1 !important;
+        .featured-work-card {
+          display: flex;
+          flex-direction: row;
+          min-height: 200px;
+        }
+        .card-clipart-container {
+          position: relative;
+          width: 230px;
+          min-width: 230px;
+          background-color: #ffffff;
+          border-right: 1px solid rgba(15, 23, 42, 0.06);
+          overflow: hidden;
+        }
+        .card-details-container {
+          padding: 20px 22px;
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+        }
+        @media (max-width: 860px) {
+          .featured-work-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+        @media (max-width: 580px) {
+          .featured-work-card {
+            flex-direction: column;
+          }
+          .card-clipart-container {
+            width: 100%;
+            min-width: 100%;
+            height: 180px;
+            border-right: none;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+          }
         }
       `}</style>
+
+      {/* Interactive Modal for Deep Dive into Case Study */}
+      {activeModalProject !== null && (
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 99999,
+            background: 'rgba(7, 13, 30, 0.75)',
+            backdropFilter: 'blur(10px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '24px',
+            animation: 'fadeIn 0.2s ease',
+          }}
+          onClick={() => setActiveModalProject(null)}
+        >
+          <div
+            style={{
+              backgroundColor: '#ffffff',
+              borderRadius: '20px',
+              maxWidth: '820px',
+              width: '100%',
+              maxHeight: '90vh',
+              overflowY: 'auto',
+              padding: '36px',
+              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.25)',
+              border: '1px solid rgba(15, 23, 42, 0.1)',
+              position: 'relative',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Close Button */}
+            <button
+              onClick={() => setActiveModalProject(null)}
+              style={{
+                position: 'absolute',
+                top: '20px',
+                right: '20px',
+                background: 'rgba(15, 23, 42, 0.05)',
+                border: 'none',
+                borderRadius: '50%',
+                width: '36px',
+                height: '36px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                color: '#081028',
+              }}
+              aria-label="Close modal"
+            >
+              <X size={18} />
+            </button>
+
+            {/* Modal Header */}
+            <div style={{ marginBottom: '24px' }}>
+              <span
+                style={{
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  color: '#1254ff',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  display: 'inline-block',
+                  marginBottom: '8px',
+                }}
+              >
+                {projects[activeModalProject].systemType}
+              </span>
+              <h3
+                style={{
+                  fontSize: '1.8rem',
+                  fontWeight: 800,
+                  color: '#081028',
+                  lineHeight: 1.25,
+                  margin: 0,
+                }}
+              >
+                {projects[activeModalProject].name}
+              </h3>
+            </div>
+
+            {/* Clipart in Modal */}
+            <div
+              style={{
+                position: 'relative',
+                width: '100%',
+                height: '260px',
+                backgroundColor: '#f8fafc',
+                borderRadius: '12px',
+                overflow: 'hidden',
+                marginBottom: '28px',
+                border: '1px solid rgba(15, 23, 42, 0.06)',
+              }}
+            >
+              <Image
+                src={projects[activeModalProject].image}
+                alt={projects[activeModalProject].name}
+                fill
+                style={{ objectFit: 'contain', padding: '16px' }}
+              />
+            </div>
+
+            {/* Metrics Grid */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                gap: '16px',
+                marginBottom: '28px',
+              }}
+            >
+              {projects[activeModalProject].metrics.map((metric) => (
+                <div
+                  key={metric.label}
+                  style={{
+                    backgroundColor: '#f8fafc',
+                    border: '1px solid rgba(15, 23, 42, 0.06)',
+                    borderRadius: '10px',
+                    padding: '16px',
+                    textAlign: 'center',
+                  }}
+                >
+                  <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#1254ff', marginBottom: '4px' }}>
+                    {metric.value}
+                  </div>
+                  <div style={{ fontSize: '0.82rem', color: '#64748b', fontWeight: 600 }}>{metric.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Overview */}
+            <div style={{ marginBottom: '28px' }}>
+              <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#081028', marginBottom: '10px' }}>
+                System Architecture &amp; Delivery Overview
+              </h4>
+              <p style={{ fontSize: '0.96rem', color: '#475569', lineHeight: 1.7, margin: 0 }}>
+                {projects[activeModalProject].fullOverview}
+              </p>
+            </div>
+
+            {/* Core Modules Delivered */}
+            <div style={{ marginBottom: '28px' }}>
+              <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#081028', marginBottom: '14px' }}>
+                Core Modules Deployed
+              </h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {projects[activeModalProject].modules.map((mod) => (
+                  <div key={mod} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <CheckCircle2 size={16} color="#1254ff" style={{ flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.94rem', color: '#1e293b', fontWeight: 500 }}>{mod}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Tech Stack */}
+            <div style={{ marginBottom: '32px' }}>
+              <h4 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#081028', marginBottom: '12px' }}>
+                Technology Stack
+              </h4>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {projects[activeModalProject].techStack.map((tech) => (
+                  <span
+                    key={tech}
+                    style={{
+                      background: 'rgba(18, 84, 255, 0.08)',
+                      border: '1px solid rgba(18, 84, 255, 0.2)',
+                      padding: '6px 14px',
+                      borderRadius: '6px',
+                      fontSize: '0.84rem',
+                      fontWeight: 600,
+                      color: '#1254ff',
+                    }}
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Modal Actions */}
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '14px' }}>
+              <button
+                onClick={() => setActiveModalProject(null)}
+                style={{
+                  background: '#f1f5f9',
+                  border: 'none',
+                  padding: '12px 24px',
+                  borderRadius: '6px',
+                  fontSize: '0.94rem',
+                  fontWeight: 600,
+                  color: '#475569',
+                  cursor: 'pointer',
+                }}
+              >
+                Close
+              </button>
+              <Link
+                href="/contact"
+                onClick={() => {
+                  setActiveModalProject(null);
+                  if (onOpenContact) onOpenContact();
+                }}
+                className="tekni-btn-solid"
+                style={{
+                  padding: '12px 28px',
+                  borderRadius: '6px',
+                  fontSize: '0.94rem',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                }}
+              >
+                <span>Request Custom Architecture</span>
+                <ArrowUpRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

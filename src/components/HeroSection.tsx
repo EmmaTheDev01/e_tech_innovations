@@ -3,422 +3,324 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
-import { ArrowUpRight, Layers } from 'lucide-react';
-
-const Hero3DCanvas = dynamic(() => import('./Hero3DCanvas'), { ssr: false });
+import { ArrowUpRight, ArrowRight } from 'lucide-react';
 
 interface HeroSectionProps {
   onOpenContact?: () => void;
 }
 
 export default function HeroSection({ onOpenContact }: HeroSectionProps) {
-
   return (
     <section
       id="hero"
       style={{
         position: 'relative',
-        minHeight: 'calc(100vh - 76px)',
+        minHeight: '88vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '30px 0 50px',
-        overflow: 'visible',
+        padding: '80px 0 100px',
+        overflow: 'hidden',
+        backgroundColor: '#ffffff',
       }}
     >
+      {/* 1. Full-bleed Background Image with Clean Light Overlay */}
       <div
         style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 1,
+        }}
+      >
+        <Image
+          src="/images/tekni-hero-bg.jpg"
+          alt="e-Tech Innovations Engineering Team"
+          fill
+          priority
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center 35%',
+          }}
+        />
+        {/* Crisp light gradient overlay for light mode legibility */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background:
+              'linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 50%, rgba(255, 255, 255, 0.60) 100%)',
+          }}
+        />
+        {/* Subtle grid pattern */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage:
+              'linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px)',
+            backgroundSize: '40px 40px',
+            opacity: 0.7,
+          }}
+        />
+      </div>
+
+      {/* 2. Tekni Decorative Cyan/Blue Wireframe Wave on bottom right */}
+      <div
+        style={{
+          position: 'absolute',
+          right: '-5%',
+          bottom: '-5%',
+          width: '55%',
+          height: '70%',
+          pointerEvents: 'none',
+          zIndex: 2,
+          opacity: 0.75,
+        }}
+      >
+        <svg
+          viewBox="0 0 800 600"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ width: '100%', height: '100%' }}
+        >
+          <path
+            d="M50 500 C 200 450, 300 200, 500 350 C 650 450, 700 250, 850 300"
+            stroke="url(#blueWaveGrad)"
+            strokeWidth="2"
+            fill="none"
+          />
+          <path
+            d="M20 520 C 180 470, 280 230, 480 370 C 630 470, 680 270, 830 320"
+            stroke="url(#blueWaveGrad)"
+            strokeWidth="1.5"
+            strokeOpacity="0.8"
+            fill="none"
+          />
+          <path
+            d="M-10 540 C 160 490, 260 260, 460 390 C 610 490, 660 290, 810 340"
+            stroke="url(#blueWaveGrad)"
+            strokeWidth="1"
+            strokeOpacity="0.6"
+            fill="none"
+          />
+          <path
+            d="M-40 560 C 140 510, 240 290, 440 410 C 590 510, 640 310, 790 360"
+            stroke="url(#blueWaveGrad)"
+            strokeWidth="0.75"
+            strokeOpacity="0.4"
+            fill="none"
+          />
+          <defs>
+            <linearGradient id="blueWaveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#1254ff" stopOpacity="0.9" />
+              <stop offset="100%" stopColor="#00d2ff" stopOpacity="0.5" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      {/* 3. Hero Content Container */}
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 3,
           width: '100%',
-          maxWidth: '1280px',
+          maxWidth: '1320px',
           margin: '0 auto',
           padding: '0 24px',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
-          alignItems: 'center',
-          gap: '40px',
-          overflow: 'visible',
         }}
-        className="hero-grid"
       >
-        {/* Left Column: Copy & Stats */}
-        <div style={{ zIndex: 2, overflow: 'visible' }}>
-          {/* Green Tag */}
-          <div className="section-tag" style={{ color: 'var(--accent-lime)' }}>
-            <span>#Enterprise Software &amp; Native Applications</span>
+        <div style={{ maxWidth: '780px' }}>
+          {/* Tekni Pill Badge */}
+          <div style={{ marginBottom: '22px' }}>
+            <span
+              className="tekni-badge"
+              style={{
+                fontSize: '0.84rem',
+                padding: '7px 18px',
+                borderRadius: '6px',
+                border: '1px solid rgba(18, 84, 255, 0.25)',
+                background: 'rgba(18, 84, 255, 0.08)',
+                color: '#1254ff',
+                letterSpacing: '0.12em',
+                fontWeight: 700,
+              }}
+            >
+              SMART TECHNOLOGY &amp; ENTERPRISE SYSTEMS
+            </span>
           </div>
 
-          {/* Headline */}
+          {/* Tekni Display Headline */}
           <h1
             style={{
-              fontSize: 'clamp(2.1rem, 3.2vw, 3.5rem)',
-              fontWeight: 300,
-              lineHeight: 1.15,
-              letterSpacing: '-0.035em',
-              color: 'var(--text-primary)',
-              marginBottom: '20px',
+              fontSize: 'clamp(2.5rem, 5vw, 4.4rem)',
+              fontWeight: 800,
+              lineHeight: 1.12,
+              letterSpacing: '-0.03em',
+              color: '#081028',
+              marginBottom: '24px',
             }}
           >
-            Custom Software. Real <br />
-            Business Impact.
+            Transforming Ideas <br />
+            <span
+              style={{
+                background: 'linear-gradient(90deg, #1254ff 0%, #0099ff 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              Tech Solutions
+            </span>
           </h1>
 
           {/* Subtitle */}
           <p
             style={{
-              fontSize: '0.98rem',
-              fontWeight: 300,
-              color: 'var(--text-secondary)',
-              lineHeight: 1.65,
-              maxWidth: '560px',
-              marginBottom: '32px',
+              fontSize: 'clamp(1.05rem, 1.4vw, 1.2rem)',
+              fontWeight: 500,
+              color: '#475569',
+              lineHeight: 1.7,
+              maxWidth: '640px',
+              marginBottom: '38px',
             }}
           >
-            e-Tech Innovations architects and delivers mission-critical software systems and high-performance native applications across all platforms and operating systems (Web, iOS, Android, Windows, macOS, Linux) — from robust ERP &amp; HR systems to next-generation LMS platforms and Hospital Information Systems (HISM).
+            e-Tech Innovations architects and delivers mission-critical software systems and high-performance native applications across all platforms (Web, iOS, Android, Windows, macOS, Linux) — from robust ERP &amp; HR platforms to next-generation LMS and Hospital Information Systems.
           </p>
 
-          {/* CTA Buttons - Identical Widths */}
+          {/* Tekni Action Buttons */}
           <div
-            className="hero-buttons-container"
             style={{
               display: 'flex',
               flexWrap: 'wrap',
-              gap: '16px',
-              marginBottom: '60px',
+              gap: '18px',
+              alignItems: 'center',
+              marginBottom: '50px',
             }}
           >
+            {/* Primary Tekni Gradient Button (Royal Blue to Cyan) */}
             <a
-              href="#featured-work"
-              className="btn-primary-blue hero-action-btn"
+              href="#about-section"
+              className="tekni-btn-gradient"
               style={{
                 fontSize: '1.02rem',
-                padding: '15px 24px',
-                textDecoration: 'none',
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '8px',
-                width: '260px',
-                minWidth: '260px',
-                maxWidth: '100%',
-                boxSizing: 'border-box',
-                whiteSpace: 'nowrap',
+                padding: '16px 36px',
+                fontWeight: 700,
               }}
             >
-              <span>Explore Featured Work</span>
-              <ArrowUpRight size={18} />
+              <span>Discover More</span>
+              <ArrowRight size={18} />
             </a>
 
+            {/* Secondary Consultation Button */}
             <Link
               href="/contact"
               onClick={onOpenContact ? (e) => { e.preventDefault(); onOpenContact(); } : undefined}
-              className="btn-outline-glass hero-action-btn"
               style={{
-                fontSize: '1.02rem',
-                padding: '15px 24px',
-                cursor: 'pointer',
-                textDecoration: 'none',
                 display: 'inline-flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                width: '260px',
-                minWidth: '260px',
-                maxWidth: '100%',
-                boxSizing: 'border-box',
-                whiteSpace: 'nowrap',
+                gap: '8px',
+                color: '#081028',
+                border: '1px solid rgba(15, 23, 42, 0.16)',
+                background: '#ffffff',
+                padding: '15px 30px',
+                borderRadius: '8px',
+                fontSize: '1rem',
+                fontWeight: 600,
+                textDecoration: 'none',
+                boxShadow: '0 2px 10px rgba(15, 23, 42, 0.04)',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#1254ff';
+                e.currentTarget.style.color = '#1254ff';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 6px 20px rgba(15, 23, 42, 0.08)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(15, 23, 42, 0.16)';
+                e.currentTarget.style.color = '#081028';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 2px 10px rgba(15, 23, 42, 0.04)';
               }}
             >
-              <span>Request Consultation</span>
+              <span>Get In Touch</span>
+              <ArrowUpRight size={18} />
             </Link>
           </div>
 
-          {/* Metrics Stats Row */}
+          {/* Quick Stats Strip */}
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
               gap: '24px',
-              paddingTop: '28px',
-              borderTop: '1px solid var(--border-glass)',
+              paddingTop: '30px',
+              borderTop: '1px solid rgba(15, 23, 42, 0.1)',
+              maxWidth: '640px',
             }}
-            className="stats-row"
           >
             <div>
               <div
                 style={{
-                  fontSize: 'clamp(1.7rem, 2.6vw, 2.3rem)',
-                  fontWeight: 400,
-                  color: 'var(--accent-lime)',
+                  fontSize: '2rem',
+                  fontWeight: 800,
+                  color: '#1254ff',
                   lineHeight: 1.1,
                   marginBottom: '6px',
-                  fontFamily: 'var(--font-mono)',
-                  letterSpacing: '-0.02em',
                 }}
               >
                 14M+
               </div>
-              <div
-                style={{
-                  fontSize: '0.8rem',
-                  fontWeight: 300,
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.4,
-                }}
-              >
-                Operations Processed Daily
+              <div style={{ fontSize: '0.82rem', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
+                Users Powered
               </div>
             </div>
 
             <div>
               <div
                 style={{
-                  fontSize: 'clamp(1.7rem, 2.6vw, 2.3rem)',
-                  fontWeight: 400,
-                  color: 'var(--accent-lime)',
+                  fontSize: '2rem',
+                  fontWeight: 800,
+                  color: '#1254ff',
                   lineHeight: 1.1,
                   marginBottom: '6px',
-                  fontFamily: 'var(--font-mono)',
-                  letterSpacing: '-0.02em',
                 }}
               >
-                99.99%
+                120+
               </div>
-              <div
-                style={{
-                  fontSize: '0.8rem',
-                  fontWeight: 300,
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.4,
-                }}
-              >
-                System Uptime &amp; SLA
+              <div style={{ fontSize: '0.82rem', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
+                Enterprise Deployments
               </div>
             </div>
 
             <div>
               <div
                 style={{
-                  fontSize: 'clamp(1.7rem, 2.6vw, 2.3rem)',
-                  fontWeight: 400,
-                  color: 'var(--accent-lime)',
+                  fontSize: '2rem',
+                  fontWeight: 800,
+                  color: '#1254ff',
                   lineHeight: 1.1,
                   marginBottom: '6px',
-                  fontFamily: 'var(--font-mono)',
-                  letterSpacing: '-0.02em',
                 }}
               >
-                100%
+                99.98%
               </div>
-              <div
-                style={{
-                  fontSize: '0.8rem',
-                  fontWeight: 300,
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.4,
-                }}
-              >
-                Code Ownership &amp; Customization
+              <div style={{ fontSize: '0.82rem', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>
+                System Reliability
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Right Column: Interactive 3D Canvas + Floating AI Companion Card */}
-        <div
-          style={{
-            position: 'relative',
-            width: '100%',
-            minHeight: '540px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            overflow: 'visible',
-          }}
-        >
-          {/* Three.js 3D WebGL Torus Knot Animation */}
-          <div
-            className="hero-canvas-box"
-            style={{
-              position: 'relative',
-              width: '100%',
-              height: '520px',
-              zIndex: 1,
-              overflow: 'visible',
-            }}
-          >
-            <Hero3DCanvas />
-          </div>
-
-          {/* Interactive Floating Enterprise Software Architecture Glass Card */}
-          <div
-            className="floating-ai-card glass-panel"
-            style={{
-              position: 'absolute',
-              bottom: '15px',
-              right: '-24px',
-              maxWidth: '310px',
-              padding: '16px',
-              zIndex: 3,
-              borderRadius: '20px',
-              background: 'var(--bg-card)',
-              animation: 'floatElement 6s ease-in-out infinite',
-            }}
-          >
-            {/* Enterprise Architecture Image */}
-            <div
-              className="floating-card-image"
-              style={{
-                position: 'relative',
-                width: '100%',
-                height: '155px',
-                borderRadius: '14px',
-                overflow: 'hidden',
-                marginBottom: '14px',
-              }}
-            >
-              <Image
-                src="/images/work-erp.jpg"
-                alt="Enterprise Software Engineering Architecture"
-                fill
-                sizes="(max-width: 768px) 100vw, 310px"
-                style={{ objectFit: 'cover' }}
-                priority
-              />
-              <div
-                style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: 'rgba(10, 14, 24, 0.35)',
-                }}
-              />
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: '10px',
-                  left: '12px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  background: 'rgba(0, 102, 255, 0.85)',
-                  backdropFilter: 'blur(8px)',
-                  padding: '4px 10px',
-                  borderRadius: '20px',
-                  fontSize: '0.75rem',
-                  fontWeight: 600,
-                  color: '#ffffff',
-                }}
-              >
-                <Layers size={12} />
-                <span>Architecture v4.0</span>
-              </div>
-            </div>
-
-            {/* Title & Description */}
-            <h3
-              style={{
-                fontSize: '1.05rem',
-                fontWeight: 700,
-                color: 'var(--text-primary)',
-                marginBottom: '8px',
-                lineHeight: 1.3,
-              }}
-            >
-              Enterprise &amp; Native Systems
-            </h3>
-            <p
-              style={{
-                fontSize: '0.82rem',
-                color: 'var(--text-secondary)',
-                lineHeight: 1.5,
-              }}
-            >
-              Native applications across iOS, Android, Windows, macOS, and Linux alongside cloud enterprise microservices.
-            </p>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .floating-ai-card {
-          border: 1.5px solid #b4f736 !important;
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 32px rgba(180, 247, 54, 0.35) !important;
-          transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
-        }
-
-        .floating-ai-card:hover {
-          border-color: #c4ff47 !important;
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 42px rgba(180, 247, 54, 0.5) !important;
-        }
-
-        .floating-card-image {
-          border: 1px solid rgba(180, 247, 54, 0.3) !important;
-          transition: border-color 0.3s ease !important;
-        }
-
-        :global([data-theme="light"]) .floating-ai-card {
-          border: 1.5px solid #000000 !important;
-          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 20px rgba(0, 0, 0, 0.08) !important;
-        }
-
-        :global([data-theme="light"]) .floating-ai-card:hover {
-          border-color: #18181b !important;
-          box-shadow: 0 25px 55px rgba(0, 0, 0, 0.18), 0 0 25px rgba(0, 0, 0, 0.14) !important;
-        }
-
-        :global([data-theme="light"]) .floating-card-image {
-          border: 1px solid rgba(0, 0, 0, 0.18) !important;
-        }
-
-        @media (prefers-color-scheme: light) {
-          :global(:root:not([data-theme="dark"])) .floating-ai-card {
-            border: 1.5px solid #000000 !important;
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 20px rgba(0, 0, 0, 0.08) !important;
-          }
-          :global(:root:not([data-theme="dark"])) .floating-card-image {
-            border: 1px solid rgba(0, 0, 0, 0.18) !important;
-          }
-        }
-
-        @media (min-width: 980px) {
-          .hero-grid {
-            grid-template-columns: 1.15fr 0.85fr !important;
-          }
-        }
-        @media (max-width: 980px) {
-          .hero-canvas-box {
-            height: 400px !important;
-          }
-          .floating-ai-card {
-            right: 0px !important;
-          }
-        }
-        @media (max-width: 640px) {
-          .hero-buttons-container {
-            flex-direction: column !important;
-            align-items: stretch !important;
-            width: 100% !important;
-          }
-          .hero-action-btn {
-            width: 100% !important;
-            min-width: 0 !important;
-            text-align: center !important;
-          }
-          .stats-row {
-            grid-template-columns: 1fr !important;
-            gap: 20px !important;
-          }
-          .hero-canvas-box {
-            height: 300px !important;
-          }
-          .floating-ai-card {
-            position: relative !important;
-            bottom: auto !important;
-            right: auto !important;
-            max-width: 100% !important;
-            margin-top: 20px !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

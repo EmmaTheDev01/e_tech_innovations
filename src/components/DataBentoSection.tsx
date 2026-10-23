@@ -9,7 +9,7 @@ interface DataBentoSectionProps {
 
 export default function DataBentoSection({ onOpenContact }: DataBentoSectionProps) {
   // Proportional SVG paths calibrated to viewBox="0 0 360 210"
-  const purplePath =
+  const bluePath =
     'M 35 185 C 58 182, 75 174, 90 152 C 104 135, 116 142, 130 146 C 146 150, 162 126, 178 98 C 190 78, 200 68, 212 70 C 224 72, 232 110, 244 108 C 258 104, 268 58, 280 52 C 294 46, 304 68, 316 64 C 330 60, 340 40, 355 42';
 
   const dashedPath =
@@ -237,11 +237,11 @@ export default function DataBentoSection({ onOpenContact }: DataBentoSectionProp
                   strokeDasharray="4 4"
                 />
 
-                {/* Primary electric purple wavy line */}
+                {/* Primary electric royal blue wavy line (NO purple) */}
                 <path
-                  d={purplePath}
+                  d={bluePath}
                   fill="none"
-                  stroke="#8b5cf6"
+                  stroke="#1254ff"
                   strokeWidth="2.8"
                   strokeLinecap="round"
                 />
@@ -320,7 +320,7 @@ export default function DataBentoSection({ onOpenContact }: DataBentoSectionProp
               </svg>
             </div>
 
-            {/* Row 2, Col 2: Stylized AI 4-Point Star (Purple gradient) */}
+            {/* Row 2, Col 2: Stylized AI 4-Point Star (Electric Blue gradient) */}
             <div className="dock-tile" title="AI Intelligence">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                 <path
@@ -329,8 +329,8 @@ export default function DataBentoSection({ onOpenContact }: DataBentoSectionProp
                 />
                 <defs>
                   <linearGradient id="starGradientDock" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#c084fc" />
-                    <stop offset="1" stopColor="#a855f7" />
+                    <stop stopColor="#00d2ff" />
+                    <stop offset="1" stopColor="#1254ff" />
                   </linearGradient>
                 </defs>
               </svg>

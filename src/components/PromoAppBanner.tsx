@@ -33,7 +33,7 @@ export default function PromoAppBanner({ onOpenContact }: PromoAppBannerProps) {
             padding: '50px 48px',
             background: 'radial-gradient(ellipse at 80% 50%, rgba(0, 102, 255, 0.25) 0%, rgba(12, 16, 26, 0.95) 70%)',
             border: '1px solid rgba(0, 240, 255, 0.25)',
-            boxShadow: '0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 102, 255, 0.15)',
+            boxShadow: '0 20px 50px rgba(0, 0, 0, 0.15)',
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
             alignItems: 'center',

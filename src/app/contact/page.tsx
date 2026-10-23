@@ -120,7 +120,7 @@ export default function ContactPage() {
                   border: '1px solid var(--border-glass)',
                   borderRadius: '24px',
                   padding: 'clamp(28px, 4vw, 44px)',
-                  boxShadow: '0 16px 40px rgba(0, 0, 0, 0.2)',
+                  boxShadow: '0 10px 30px rgba(15, 23, 42, 0.06)',
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
@@ -382,7 +382,7 @@ export default function ContactPage() {
                         </div>
                         {office.phones.map((p, pIdx) => (
                           <div key={pIdx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: 'var(--text-secondary)', marginBottom: '6px' }}>
-                            <Phone size={14} style={{ color: pIdx === 0 ? '#41b94b' : '#0066ff' }} />
+                            <Phone size={14} style={{ color: '#1254ff' }} />
                             <a href={`tel:${p.replace(/\s+/g, '')}`} style={{ color: 'var(--text-primary)', textDecoration: 'none', fontWeight: 600 }}>
                               {p}
                             </a>
