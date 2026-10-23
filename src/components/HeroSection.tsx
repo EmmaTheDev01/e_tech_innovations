@@ -57,75 +57,7 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
               'linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 50%, rgba(255, 255, 255, 0.60) 100%)',
           }}
         />
-        {/* Subtle grid pattern */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundImage:
-              'linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
-            opacity: 0.7,
-          }}
-        />
-      </div>
-
-      {/* 2. Tekni Decorative Cyan/Blue Wireframe Wave on bottom right */}
-      <div
-        style={{
-          position: 'absolute',
-          right: '-5%',
-          bottom: '-5%',
-          width: '55%',
-          height: '70%',
-          pointerEvents: 'none',
-          zIndex: 2,
-          opacity: 0.75,
-        }}
-      >
-        <svg
-          viewBox="0 0 800 600"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{ width: '100%', height: '100%' }}
-        >
-          <path
-            d="M50 500 C 200 450, 300 200, 500 350 C 650 450, 700 250, 850 300"
-            stroke="url(#blueWaveGrad)"
-            strokeWidth="2"
-            fill="none"
-          />
-          <path
-            d="M20 520 C 180 470, 280 230, 480 370 C 630 470, 680 270, 830 320"
-            stroke="url(#blueWaveGrad)"
-            strokeWidth="1.5"
-            strokeOpacity="0.8"
-            fill="none"
-          />
-          <path
-            d="M-10 540 C 160 490, 260 260, 460 390 C 610 490, 660 290, 810 340"
-            stroke="url(#blueWaveGrad)"
-            strokeWidth="1"
-            strokeOpacity="0.6"
-            fill="none"
-          />
-          <path
-            d="M-40 560 C 140 510, 240 290, 440 410 C 590 510, 640 310, 790 360"
-            stroke="url(#blueWaveGrad)"
-            strokeWidth="0.75"
-            strokeOpacity="0.4"
-            fill="none"
-          />
-          <defs>
-            <linearGradient id="blueWaveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#1254ff" stopOpacity="0.9" />
-              <stop offset="100%" stopColor="#00d2ff" stopOpacity="0.5" />
-            </linearGradient>
-          </defs>
-        </svg>
+        {/* Clean subtle backdrop tint */}
       </div>
 
       {/* 3. Hero Content Container */}
@@ -171,13 +103,7 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
             }}
           >
             Transforming Ideas <br />
-            <span
-              style={{
-                background: 'linear-gradient(90deg, #1254ff 0%, #0099ff 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
-            >
+            <span style={{ color: '#1254ff' }}>
               Tech Solutions
             </span>
           </h1>
@@ -193,7 +119,7 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
               marginBottom: '38px',
             }}
           >
-            e-Tech Innovations architects and delivers mission-critical software systems and high-performance native applications across all platforms (Web, iOS, Android, Windows, macOS, Linux) — from robust ERP &amp; HR platforms to next-generation LMS and Hospital Information Systems.
+            We architect and engineer mission-critical enterprise software, custom platforms, and high-performance native applications built for scale.
           </p>
 
           {/* Tekni Action Buttons */}
@@ -206,10 +132,10 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
               marginBottom: '50px',
             }}
           >
-            {/* Primary Tekni Gradient Button (Royal Blue to Cyan) */}
+            {/* Primary Tekni Solid Button */}
             <a
               href="#about-section"
-              className="tekni-btn-gradient"
+              className="tekni-btn-solid"
               style={{
                 fontSize: '1.02rem',
                 padding: '16px 36px',

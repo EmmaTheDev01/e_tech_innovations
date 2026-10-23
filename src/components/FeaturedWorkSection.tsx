@@ -185,13 +185,7 @@ export default function FeaturedWorkSection({ onOpenContact }: FeaturedWorkSecti
             }}
           >
             Featured Case Studies &amp;{' '}
-            <span
-              style={{
-                background: 'linear-gradient(90deg, #1254ff 0%, #00d2ff 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
-            >
+            <span style={{ color: '#1254ff' }}>
               Enterprise Systems
             </span>
           </h2>

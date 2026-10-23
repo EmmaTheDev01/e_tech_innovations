@@ -127,13 +127,7 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
             }}
           >
             Our Enterprise Software{' '}
-            <span
-              style={{
-                background: 'linear-gradient(90deg, #1254ff 0%, #00d2ff 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
-            >
+            <span style={{ color: '#1254ff' }}>
               Engineering Roadmap
             </span>
           </h2>
@@ -186,7 +180,7 @@ export default function EnterpriseWorkflowSection({ onOpenContact }: EnterpriseW
                         style={{
                           fontSize: '1rem',
                           fontWeight: 800,
-                          fontFamily: 'monospace',
+                          fontFamily: 'inherit',
                           color: isActive ? '#1254ff' : '#94a3b8',
                         }}
                       >

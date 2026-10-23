@@ -93,19 +93,7 @@ export default function AccelerateBanner({ onOpenContact }: AccelerateBannerProp
         }}
       />
 
-      {/* Decorative subtle grid */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundImage:
-            'linear-gradient(rgba(18, 84, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(18, 84, 255, 0.04) 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-          opacity: 0.7,
-          pointerEvents: 'none',
-          zIndex: 3,
-        }}
-      />
+
 
       {/* 3. Centered Content Container */}
       <div
@@ -138,7 +126,7 @@ export default function AccelerateBanner({ onOpenContact }: AccelerateBannerProp
                 gap: '8px',
               }}
             >
-              <Sparkles size={14} color="#1254ff" />
+             
               <span>Next-Gen Enterprise Engine</span>
             </span>
           </div>

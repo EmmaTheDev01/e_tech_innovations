@@ -97,7 +97,6 @@ export default function RootLayout({
       </head>
       <body>
         <ScrollRevealProvider />
-        <div className="isometric-grid-overlay" />
         <div style={{ position: "relative", zIndex: 1, minHeight: "100vh", display: "flex", flexDirection: "column" }}>
           {children}
         </div>

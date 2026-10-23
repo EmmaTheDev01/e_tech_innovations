@@ -297,22 +297,23 @@ export default function CustomSoftwareServicePage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
             <div
               style={{
-                background: 'linear-gradient(135deg, rgba(0, 102, 255, 0.15) 0%, rgba(10, 15, 29, 0.95) 100%)',
-                border: '1px solid rgba(0, 102, 255, 0.35)',
-                borderRadius: '28px',
+                background: '#081028',
+                border: '1px solid #1e293b',
+                borderRadius: '20px',
                 padding: 'clamp(40px, 6vw, 64px) clamp(24px, 4vw, 56px)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 flexWrap: 'wrap',
                 gap: '32px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
               }}
             >
               <div style={{ maxWidth: '640px' }}>
-                <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '16px' }}>
+                <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 800, color: '#ffffff', marginBottom: '16px' }}>
                   Commission custom software built for your business.
                 </h2>
-                <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
+                <p style={{ fontSize: '1.05rem', color: '#94a3b8', lineHeight: 1.65 }}>
                   Tell us about your technical specifications, timeline, and security parameters. Our principal architects will provide an engineering blueprint and cost estimate.
                 </p>
               </div>

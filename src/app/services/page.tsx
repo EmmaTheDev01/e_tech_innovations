@@ -431,8 +431,7 @@ export default function ServicesPage() {
                     style={{
                       fontSize: '1.8rem',
                       fontWeight: 800,
-                      color: '#0066ff',
-                      fontFamily: 'var(--font-space)',
+                      color: '#1254ff',
                       marginBottom: '16px',
                     }}
                   >
@@ -468,15 +467,16 @@ export default function ServicesPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
             <div
               style={{
-                background: 'linear-gradient(135deg, rgba(0, 102, 255, 0.12) 0%, rgba(10, 15, 29, 0.95) 100%)',
-                border: '1px solid rgba(0, 102, 255, 0.3)',
-                borderRadius: '28px',
+                background: '#081028',
+                border: '1px solid #1e293b',
+                borderRadius: '20px',
                 padding: 'clamp(40px, 6vw, 64px) clamp(24px, 4vw, 56px)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 flexWrap: 'wrap',
                 gap: '32px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
               }}
             >
               <div style={{ maxWidth: '640px' }}>
@@ -484,7 +484,7 @@ export default function ServicesPage() {
                   style={{
                     fontSize: '0.88rem',
                     fontWeight: 700,
-                    color: '#0066ff',
+                    color: '#38bdf8',
                     textTransform: 'uppercase',
                     letterSpacing: '0.08em',
                     display: 'block',
@@ -497,7 +497,7 @@ export default function ServicesPage() {
                   style={{
                     fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
                     fontWeight: 800,
-                    color: 'var(--text-primary)',
+                    color: '#ffffff',
                     marginBottom: '16px',
                     lineHeight: 1.25,
                   }}

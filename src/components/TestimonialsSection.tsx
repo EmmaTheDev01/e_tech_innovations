@@ -93,7 +93,6 @@ export default function TestimonialsSection() {
                 fontSize: '1.05rem',
                 fontWeight: 700,
                 color: '#ffffff',
-                fontFamily: 'var(--font-mono)',
               }}
             >
               4.7 <span style={{ color: '#94a3b8', fontSize: '0.88rem' }}>(2,488 Rating)</span>
@@ -139,7 +138,7 @@ export default function TestimonialsSection() {
                       width: '54px',
                       height: '54px',
                       borderRadius: '50%',
-                      background: 'linear-gradient(135deg, #0066ff, #00f0ff)',
+                      background: '#1254ff',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',

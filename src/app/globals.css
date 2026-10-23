@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 /* Default (Light Mode) */
 :root {
@@ -14,14 +14,14 @@
   --accent-blue-bright: #0066ff;
   --accent-blue-glow: rgba(18, 84, 255, 0.25);
 
-  --accent-lime: #00d2ff;
-  --accent-lime-hover: #38bdf8;
-  --accent-lime-glow: rgba(0, 210, 255, 0.2);
+  --accent-lime: #1254ff;
+  --accent-lime-hover: #0940d6;
+  --accent-lime-glow: rgba(18, 84, 255, 0.15);
   --accent-lime-tag-bg: rgba(18, 84, 255, 0.08);
   --accent-lime-tag-border: rgba(18, 84, 255, 0.2);
 
-  --accent-cyan: #00d2ff;
-  --accent-blue-gradient: linear-gradient(90deg, #1254ff 0%, #0099ff 100%);
+  --accent-cyan: #0066ff;
+  --accent-blue-gradient: #1254ff;
   --accent-blue-deep: #0a38b8;
   --tekni-blue: #1254ff;
   --tekni-navy: #081028;
@@ -37,7 +37,7 @@
   --modal-bg: #ffffff;
 
   --font-sans: var(--font-plus-jakarta-sans, 'Plus Jakarta Sans'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'Space Grotesk', monospace;
+  --font-mono: var(--font-sans);
 }
 
 [data-theme="light"] {
@@ -53,14 +53,14 @@
   --accent-blue-bright: #0066ff;
   --accent-blue-glow: rgba(18, 84, 255, 0.25);
 
-  --accent-lime: #00d2ff;
-  --accent-lime-hover: #38bdf8;
-  --accent-lime-glow: rgba(0, 210, 255, 0.2);
+  --accent-lime: #1254ff;
+  --accent-lime-hover: #0940d6;
+  --accent-lime-glow: rgba(18, 84, 255, 0.15);
   --accent-lime-tag-bg: rgba(18, 84, 255, 0.08);
   --accent-lime-tag-border: rgba(18, 84, 255, 0.2);
 
-  --accent-cyan: #00d2ff;
-  --accent-blue-gradient: linear-gradient(90deg, #1254ff 0%, #0099ff 100%);
+  --accent-cyan: #0066ff;
+  --accent-blue-gradient: #1254ff;
   --accent-blue-deep: #0a38b8;
   --tekni-blue: #1254ff;
   --tekni-navy: #081028;
@@ -155,19 +155,7 @@ body {
 }
 
 .isometric-grid-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.18;
-  background-size: 40px 40px;
-  background-image:
-    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-  mask-image: radial-gradient(circle at 60% 30%, black 20%, transparent 80%);
+  display: none;
 }
 
 /* Glassmorphism utility */
@@ -178,22 +166,22 @@ body {
   border: 1px solid var(--border-glass);
   border-radius: 20px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 .glass-panel:hover {
   border-color: var(--border-glass-bright);
 }
 
-/* Glowing tag badge */
+/* Corporate tag badge */
 .section-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--accent-lime);
+  color: var(--accent-blue);
   font-size: 0.84rem !important;
-  font-weight: 450 !important;
-  letter-spacing: 0.04em !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
   margin-bottom: 14px;
 }
 
@@ -208,9 +196,7 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--accent-lime);
-  box-shadow: 0 0 10px var(--accent-lime);
-  animation: pulseDot 2s infinite;
+  background: var(--accent-blue);
 }
 
 /* Tekni Plus Jakarta Sans Typography System */
@@ -328,43 +314,40 @@ p {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: var(--accent-lime);
+  background: #1254ff;
   color: #ffffff;
-  font-weight: 450 !important;
+  font-weight: 500 !important;
   font-size: 0.9rem !important;
-  padding: 9px 18px;
-  border-radius: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 15px var(--accent-lime-glow);
+  box-shadow: 0 2px 8px rgba(18, 84, 255, 0.15);
 }
 
 [data-theme="dark"] .btn-lime {
-  color: #121212;
+  color: #ffffff;
 }
 
 .btn-lime:hover {
-  background: var(--accent-lime-hover);
+  background: #0940d6;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px var(--accent-lime-glow);
+  box-shadow: 0 4px 12px rgba(18, 84, 255, 0.25);
 }
 
 /* Arrow Cutout Button (Services Section) */
 .arrow-cutout-btn {
-  background: var(--accent-lime) !important;
-  color: #121212 !important;
-  box-shadow: 0 8px 24px rgba(180, 247, 54, 0.35) !important;
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.3s ease,
-    background-color 0.2s ease !important;
-  will-change: transform;
+  background: #1254ff !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(18, 84, 255, 0.18) !important;
+  transition: all 0.25s ease !important;
 }
 
 .arrow-cutout-btn svg {
-  color: #121212 !important;
-  stroke: #121212 !important;
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  transition: transform 0.25s ease !important;
 }
 
 /* Tekni IT Solutions Design System Classes (No Purple, Electric Blue & Cyan) */
@@ -395,7 +378,7 @@ p {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: linear-gradient(90deg, #1254ff 0%, #0099ff 100%);
+  background: #1254ff;
   color: #ffffff !important;
   font-weight: 500;
   font-size: 0.98rem;
@@ -404,13 +387,13 @@ p {
   border: none;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(18, 84, 255, 0.18);
+  transition: all 0.25s ease;
 }
 
 .tekni-btn-gradient:hover {
-  background: linear-gradient(90deg, #0940d6 0%, #0080e6 100%);
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+  background: #0940d6;
+  box-shadow: 0 4px 14px rgba(18, 84, 255, 0.25);
   transform: translateY(-2px);
 }
 
@@ -495,40 +478,20 @@ p {
 }
 
 .arrow-cutout-btn:hover {
-  box-shadow: 0 16px 36px rgba(180, 247, 54, 0.55) !important;
-  animation: bouncyButtonHover 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both !important;
+  background: #0940d6 !important;
+  box-shadow: 0 4px 12px rgba(18, 84, 255, 0.25) !important;
+  transform: translateY(-2px) !important;
 }
 
 .arrow-cutout-btn:hover svg {
-  transform: translate(3px, -3px) scale(1.1) !important;
+  transform: translate(2px, -2px) !important;
 }
 
 .arrow-cutout-btn:active {
-  transform: scale(0.95) !important;
+  transform: scale(0.97) !important;
 }
 
 /* Animations */
-@keyframes bouncyButtonHover {
-  0% {
-    transform: scale(1);
-  }
-
-  35% {
-    transform: scale(1.14) translate(3px, -3px);
-  }
-
-  60% {
-    transform: scale(1.04) translate(1px, -1px);
-  }
-
-  80% {
-    transform: scale(1.1) translate(2.5px, -2.5px);
-  }
-
-  100% {
-    transform: scale(1.08) translate(2px, -2px);
-  }
-}
 
 @keyframes floatOrb {
   0% {

@@ -155,7 +155,6 @@ export default function DataBentoSection({ onOpenContact }: DataBentoSectionProp
                         fontSize: '2.5rem',
                         fontWeight: 700,
                         color: 'var(--text-primary)',
-                        fontFamily: 'var(--font-mono)',
                         letterSpacing: '-0.03em',
                         lineHeight: 1,
                       }}
@@ -209,16 +208,16 @@ export default function DataBentoSection({ onOpenContact }: DataBentoSectionProp
                 preserveAspectRatio="none"
               >
                 {/* Y-axis labels */}
-                <text x="4" y="34" fill="var(--text-muted)" fontSize="10.5" fontFamily="var(--font-mono)">
+                <text x="4" y="34" fill="var(--text-muted)" fontSize="10.5">
                   6K
                 </text>
-                <text x="4" y="84" fill="var(--text-muted)" fontSize="10.5" fontFamily="var(--font-mono)">
+                <text x="4" y="84" fill="var(--text-muted)" fontSize="10.5">
                   5K
                 </text>
-                <text x="4" y="134" fill="var(--text-muted)" fontSize="10.5" fontFamily="var(--font-mono)">
+                <text x="4" y="134" fill="var(--text-muted)" fontSize="10.5">
                   4K
                 </text>
-                <text x="4" y="184" fill="var(--text-muted)" fontSize="10.5" fontFamily="var(--font-mono)">
+                <text x="4" y="184" fill="var(--text-muted)" fontSize="10.5">
                   3K
                 </text>
 

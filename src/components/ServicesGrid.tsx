@@ -316,9 +316,9 @@ export default function ServicesGrid({ onOpenContact }: ServicesGridProps) {
 
       <style jsx>{`
         .tekni-service-card:hover {
-          transform: translateY(-6px);
-          border-color: #93c5fd !important;
-          box-shadow: 0 16px 36px rgba(18, 84, 255, 0.12) !important;
+          transform: translateY(-4px);
+          border-color: #cbd5e1 !important;
+          box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08) !important;
         }
       `}</style>
     </section>

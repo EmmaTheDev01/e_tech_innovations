@@ -43,21 +43,7 @@ export default function WhyChooseUsBento({ onOpenContact }: WhyChooseUsBentoProp
         overflow: 'hidden',
       }}
     >
-      {/* Background ambient subtle grid lines */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage:
-            'linear-gradient(rgba(18, 84, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(18, 84, 255, 0.04) 1px, transparent 1px)',
-          backgroundSize: '50px 50px',
-          opacity: 0.8,
-          pointerEvents: 'none',
-        }}
-      />
+
 
       <div
         style={{
@@ -105,13 +91,7 @@ export default function WhyChooseUsBento({ onOpenContact }: WhyChooseUsBentoProp
               }}
             >
               We’ve been thriving in{' '}
-              <span
-                style={{
-                  background: 'linear-gradient(90deg, #1254ff 0%, #00d2ff 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}
-              >
+              <span style={{ color: '#1254ff' }}>
                 enterprise software &amp; native systems
               </span>
             </h2>
@@ -204,7 +184,7 @@ export default function WhyChooseUsBento({ onOpenContact }: WhyChooseUsBentoProp
                         background: 'rgba(18, 84, 255, 0.08)',
                         padding: '4px 10px',
                         borderRadius: '6px',
-                        fontFamily: 'monospace',
+                        fontFamily: 'inherit',
                       }}
                     >
                       {item.num}
